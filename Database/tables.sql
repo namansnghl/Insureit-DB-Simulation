@@ -18,10 +18,8 @@ CREATE TABLE Agents(
   Salary integer
 );
 
-
-
 CREATE TABLE AutoPolicy_detail(
-  Policy_id integer PRIMARY KEY,
+  Auto_Policy_id integer PRIMARY KEY,
   Name varchar(255),
   Type varchar(255),
   Description varchar(255),
@@ -32,7 +30,7 @@ CREATE TABLE AutoPolicy_detail(
 );
 
 CREATE TABLE HomePolicy_detail (
-  Policy_id integer PRIMARY KEY,
+  Home_Policy_id integer PRIMARY KEY,
   Name varchar(255),
   Type varchar(255),
   Description varchar(255),
@@ -65,8 +63,9 @@ CREATE TABLE Loan(
 CREATE TABLE Policy_Holder (
   Holder_id integer PRIMARY KEY,
   Customer_id integer,
-  Policy_id integer,
-  Policy_type varchar(255),
+  Home_Policy_id integer,
+  Auto_Policy_id integer,
+ -- Policy_type varchar(255),
   status_of_policy varchar(255),
   StartDate date,
   ExpiryDate date,
@@ -74,8 +73,8 @@ CREATE TABLE Policy_Holder (
   at_risk_flag varchar(255),
   Agent_id integer,
   FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id),
-  FOREIGN KEY (Policy_id) REFERENCES AutoPolicy_detail(Policy_id),
-  FOREIGN KEY (Policy_id) REFERENCES HomePolicy_detail(Policy_id),
+  FOREIGN KEY (Auto_Policy_id) REFERENCES AutoPolicy_detail(Auto_Policy_id),
+  FOREIGN KEY (Home_Policy_id) REFERENCES HomePolicy_detail(Home_Policy_id),
   FOREIGN KEY (Agent_id) REFERENCES Agents(Agent_id)
 );
 
@@ -115,7 +114,7 @@ CREATE TABLE Transactions(
   Customer_id integer,
   Holder_id integer,
   FOREIGN KEY (Holder_id) REFERENCES Policy_Holder(Holder_id),
-   FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+  FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
 );
 
 CREATE TABLE Claim(
