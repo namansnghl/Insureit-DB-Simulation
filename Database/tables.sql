@@ -1,7 +1,7 @@
-create database insurit;
+create database IF NOT EXISTS insurit;
 use insurit;
 
-CREATE TABLE Customer (
+CREATE TABLE IF NOT EXISTS Customer (
   Customer_id integer PRIMARY KEY,
   Name varchar(255),
   Phone varchar(255),
@@ -10,7 +10,7 @@ CREATE TABLE Customer (
   Driving_license varchar(255)
 );
 
-CREATE TABLE Agents(
+CREATE TABLE IF NOT EXISTS Agents(
   Agent_id integer PRIMARY KEY,
   Name varchar(255),
   Email varchar(255),
@@ -18,7 +18,7 @@ CREATE TABLE Agents(
   Salary integer
 );
 
-CREATE TABLE AutoPolicy_detail(
+CREATE TABLE IF NOT EXISTS AutoPolicy_detail(
   Auto_Policy_id integer PRIMARY KEY,
   Name varchar(255),
   Type varchar(255),
@@ -29,7 +29,7 @@ CREATE TABLE AutoPolicy_detail(
   Policy_type varchar(255)
 );
 
-CREATE TABLE HomePolicy_detail (
+CREATE TABLE IF NOT EXISTS HomePolicy_detail (
   Home_Policy_id integer PRIMARY KEY,
   Name varchar(255),
   Type varchar(255),
@@ -40,7 +40,7 @@ CREATE TABLE HomePolicy_detail (
   Policy_type varchar(255)
 );
 
-CREATE TABLE Finance_details (
+CREATE TABLE IF NOT EXISTS Finance_details (
   SSN integer,
   Customer_id integer PRIMARY KEY,
   Account_Number varchar(255),
@@ -50,7 +50,7 @@ CREATE TABLE Finance_details (
   FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
 ); 
 
-CREATE TABLE Loan(
+CREATE TABLE IF NOT EXISTS Loan(
   LoanId varchar(255) PRIMARY KEY,
   LoanType varchar(255),
   Tenure integer,
@@ -60,7 +60,7 @@ CREATE TABLE Loan(
 );
 
 
-CREATE TABLE Policy_Holder (
+CREATE TABLE IF NOT EXISTS Policy_Holder (
   Holder_id integer PRIMARY KEY,
   Customer_id integer,
   Home_Policy_id integer,
@@ -79,7 +79,7 @@ CREATE TABLE Policy_Holder (
 );
 
 
-CREATE TABLE Vehicle_Details (
+CREATE TABLE IF NOT EXISTS Vehicle_Details (
   Asset_id integer PRIMARY KEY,
   Model_type varchar(255),
   Name varchar(255),
@@ -93,7 +93,7 @@ CREATE TABLE Vehicle_Details (
   FOREIGN KEY (LoanId) REFERENCES Loan(LoanId)
 );
 
-CREATE TABLE Home_Details(
+CREATE TABLE IF NOT EXISTS Home_Details(
   Asset_id integer PRIMARY KEY,
   Address varchar(255),
   Carpet_area integer,
@@ -106,7 +106,7 @@ CREATE TABLE Home_Details(
   FOREIGN KEY (LoanId) REFERENCES Loan(LoanId)
 );
 
-CREATE TABLE Transactions(
+CREATE TABLE IF NOT EXISTS Transactions(
   Transaction_id varchar(255) PRIMARY KEY,
   Date date,
   status_of_transaction varchar(255),
@@ -117,7 +117,7 @@ CREATE TABLE Transactions(
   FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
 );
 
-CREATE TABLE Claim(
+CREATE TABLE IF NOT EXISTS Claim(
   Claim_id integer PRIMARY KEY,
   Claim_amount integer,
   Date date,
@@ -125,13 +125,13 @@ CREATE TABLE Claim(
   foreign key(Holder_id) references Policy_Holder(Holder_id)
 );
 
-CREATE TABLE Report_Details (
+CREATE TABLE IF NOT EXISTS Report_Details (
   Report_id integer PRIMARY KEY,
   Date date,
   Damage_amount integer
 );
 
-CREATE TABLE Report(
+CREATE TABLE IF NOT EXISTS Report(
 	Report_id integer,
     Asset_id_vehicle integer,
     Asset_id_home integer,
