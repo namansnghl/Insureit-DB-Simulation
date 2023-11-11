@@ -1,3 +1,4 @@
+use insurit;
 INSERT INTO AutoPolicy_detail VALUES (111,'Comprehensive Car Care','Sedan','This policy covers all types of sedans and offers comprehensive protection, including coverage for accidents, theft, natural disasters, and medical expenses.','Active',50000,12,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (112,'Off-Road Adventure Shield','SUV','Designed for SUVs and off-road vehicles, this policy provides specialized coverage for damages incurred during off-road adventures, including collisions, rollovers, and towing expenses.','Active',70000,24,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (113,'Oriental Motor Plan','Motorbike','Tailored for motorcycles, this policy covers damages resulting from accidents, theft, and third-party liabilities, ensuring the freedom of the open road with peace of mind.','Active',30000,12,'Auto');
@@ -10,5 +11,5 @@ INSERT INTO AutoPolicy_detail VALUES (119,'Guardian Auto Insurance','Electric Ca
 INSERT INTO AutoPolicy_detail VALUES (120,'DriveSure Insuranc','SUV','Policy tailored for frequent travelers, offering coverage for rental cars and drivers in multiple states.','Active',80000,12,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (121,'Liberty Auto Assurance','Sedan & SUV','Standard coverage for collisions and comprehensive damages, with optional add-ons for enhanced protection.','Active',50000,12,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (122,'ABC Plan','Sedan & SUV','Basic coverage for liability and medical expenses, suitable for low-risk drivers.','Inactive',40000,12,'Auto');
-
-Select * from autopolicy_detail;
+commit;
+-- Select * from autopolicy_detail;

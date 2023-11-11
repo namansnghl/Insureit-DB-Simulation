@@ -12,5 +12,5 @@ INSERT INTO Agents VALUES (69259, 'Bonnibelle Manchett', '839-488-0561', 'bmanch
 INSERT INTO Agents VALUES (13041, 'Raddie Basson', '560-368-3460', 'rbassona@psu.edu', 300977);
 INSERT INTO Agents VALUES (78600, 'Veronika Pestricke', '832-194-4030', 'vpestrickeb@hhs.gov', 295584);
 INSERT INTO Agents VALUES (33645, 'Worden Rosedale', '342-776-4301', 'wrosedalec@over-blog.com', 163238);
-
-SELECT * FROM Agents;
+commit;
+-- SELECT * FROM Agents;

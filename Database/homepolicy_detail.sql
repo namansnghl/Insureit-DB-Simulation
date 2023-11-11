@@ -1,3 +1,4 @@
+use insurit;
 INSERT INTO HomePolicy_detail VALUES (100,'HomeShield','Rent and Owned','Comprehensive coverage for the structure of the home, personal belongings, liability protection, and additional living expenses in case of temporary displacement due to covered events.','Active',300000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (101,'SecureHome','Owned','Premium policy offering high coverage limits, including protection against natural disasters, theft, and personal injury liability, with options for custom add-ons.','Active',500000,24,'Home');
 INSERT INTO HomePolicy_detail VALUES (102,'SafeHaven Insurance','Rent and Owned','Basic coverage for the homes structure and essential belongings, suitable for homeowners seeking affordable protection against common risks.','Active',250000,12,'Home');
@@ -10,5 +11,5 @@ INSERT INTO HomePolicy_detail VALUES (108,'SmartGuard Home Insurance','Owned','C
 INSERT INTO HomePolicy_detail VALUES (109,'SafeHome Solutions','Owned','High-value policy with features like identity theft protection, credit card coverage, and coverage for unauthorized transactions due to cybercrime.','Active',555000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (110,'HomeAssure Services','Rent','Policy offering coverage for home systems and appliances, such as HVAC, electrical, and plumbing, providing financial protection against unexpected repair or replacement costs.','Active',400000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (111,'One Home Insurance','Owned','Long-term policy with perks like extended coverage for valuables, home office equipment, and reimbursement for temporary housing and meals during repairs.','Inactive',250000,12,'Home');
-
-select * from homepolicy_detail;
+commit;
+-- select * from homepolicy_detail;
