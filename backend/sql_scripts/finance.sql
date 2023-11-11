@@ -50,6 +50,3 @@ INSERT INTO Finance_details VALUES (518012262, 733572, '3546730823', 30788.44, '
 INSERT INTO Finance_details VALUES (465939571, 74341, '2475885785', 30788.44, 'Citigroup', 'Standard');
 INSERT INTO Finance_details VALUES (860361556, 249650, '1238315826', 20574.47, 'TD Bank', 'Standard');
 commit;
-
--- Select * from finance_details;
-
