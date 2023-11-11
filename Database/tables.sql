@@ -1,28 +1,24 @@
 create database insurit;
 use insurit;
 
-CREATE TABLE Finance_details (
-  SSN integer,
-  Customer_id integer PRIMARY KEY,
-  Account_Number varchar(255),
-  Routing_Number varchar(255),
-  CreditScore integer,
-  Income integer,
-  Bank_name varchar(255)
-); 
-Alter table Finance_details drop column Routing_Number;
-Alter table Finance_details drop column CreditScore;
-Alter table Finance_details add column Credit_History varchar(255);
-
 CREATE TABLE Customer (
   Customer_id integer PRIMARY KEY,
   Name varchar(255),
   Phone varchar(255),
   Email varchar(255),
   Address varchar(255),
-  Driving_license varchar(255),
-  FOREIGN KEY (Customer_id) REFERENCES Finance_details(Customer_id)
+  Driving_license varchar(255)
 );
+
+CREATE TABLE Agents(
+  Agent_id integer PRIMARY KEY,
+  Name varchar(255),
+  Email varchar(255),
+  Phone varchar(255),
+  Salary integer
+);
+
+
 
 CREATE TABLE AutoPolicy_detail(
   Policy_id integer PRIMARY KEY,
@@ -46,13 +42,25 @@ CREATE TABLE HomePolicy_detail (
   Policy_type varchar(255)
 );
 
-CREATE TABLE Agents(
-  Agent_id integer PRIMARY KEY,
-  Name varchar(255),
-  Email varchar(255),
-  Phone varchar(255),
-  Salary integer
+CREATE TABLE Finance_details (
+  SSN integer,
+  Customer_id integer PRIMARY KEY,
+  Account_Number varchar(255),
+  Income integer,
+  Bank_name varchar(255),
+  Credit_History varchar(255),
+  FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+); 
+
+CREATE TABLE Loan(
+  LoanId varchar(255) PRIMARY KEY,
+  LoanType varchar(255),
+  Tenure integer,
+  Amount integer,
+  Customer_id integer,
+  FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
 );
+
 
 CREATE TABLE Policy_Holder (
   Holder_id integer PRIMARY KEY,
@@ -69,15 +77,6 @@ CREATE TABLE Policy_Holder (
   FOREIGN KEY (Policy_id) REFERENCES AutoPolicy_detail(Policy_id),
   FOREIGN KEY (Policy_id) REFERENCES HomePolicy_detail(Policy_id),
   FOREIGN KEY (Agent_id) REFERENCES Agents(Agent_id)
-);
-
-CREATE TABLE Loan(
-  LoanId varchar(255) PRIMARY KEY,
-  LoanType varchar(255),
-  Tenure integer,
-  Amount integer,
-  Customer_id integer,
-  FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
 );
 
 
