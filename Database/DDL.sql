@@ -1,15 +1,7 @@
 create database insurit;
 use insurit;
 
-CREATE TABLE Finance_details (
-  SSN integer,
-  Customer_id integer PRIMARY KEY,
-  Account_Number varchar(255),
-  Routing_Number varchar(255),
-  CreditScore integer,
-  Income integer,
-  Bank_name varchar(255)
-); 
+
 
 CREATE TABLE Customer (
   Customer_id integer PRIMARY KEY,
@@ -17,9 +9,20 @@ CREATE TABLE Customer (
   Phone varchar(255),
   Email varchar(255),
   Address varchar(255),
-  Driving_license varchar(255),
-  FOREIGN KEY (Customer_id) REFERENCES Finance_details(Customer_id)
+  Driving_license varchar(255)
+ -- FOREIGN KEY (Customer_id) REFERENCES Finance_details(Customer_id)
 );
+
+CREATE TABLE Finance_details (
+  SSN integer,
+  Customer_id integer PRIMARY KEY,
+  Account_Number varchar(255),
+  Routing_Number varchar(255),
+  CreditScore integer,
+  Income integer,
+  Bank_name varchar(255),
+  FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+); 
 
 CREATE TABLE AutoPolicy_detail(
   Policy_id integer PRIMARY KEY,
