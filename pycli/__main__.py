@@ -40,6 +40,6 @@ if __name__ == "__main__":
     elif args.command == login_command:
         if login(args.username, args.password):
             print("Authentication successful.\nWelcome ", args.username)
-            user_commands.run(args.username)
+            user_commands.run(args.username, parser)
         else:
             print("Authentication failed. Incorrect Username/Password.")
