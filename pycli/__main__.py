@@ -1,5 +1,5 @@
 import argparse, getpass
-from authenticate import login
+from backend import authenticate as auth
 import user_commands
 
 if __name__ == "__main__":
@@ -38,7 +38,7 @@ if __name__ == "__main__":
         print("connect with DB here")
     # if asked to login
     elif args.command == login_command:
-        if login(args.username, args.password):
+        if auth.login(args.username, args.password):
             print("Authentication successful.\nWelcome ", args.username)
             user_commands.run(args.username, parser)
         else:
