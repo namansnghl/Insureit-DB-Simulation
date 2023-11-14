@@ -11,4 +11,5 @@ INSERT INTO HomePolicy_detail VALUES (108,'SmartGuard Home Insurance','Owned','C
 INSERT INTO HomePolicy_detail VALUES (109,'SafeHome Solutions','Owned','High-value policy with features like identity theft protection, credit card coverage, and coverage for unauthorized transactions due to cybercrime.','Active',555000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (110,'HomeAssure Services','Rent','Policy offering coverage for home systems and appliances, such as HVAC, electrical, and plumbing, providing financial protection against unexpected repair or replacement costs.','Active',400000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (111,'One Home Insurance','Owned','Long-term policy with perks like extended coverage for valuables, home office equipment, and reimbursement for temporary housing and meals during repairs.','Inactive',250000,12,'Home');
+
 commit;
