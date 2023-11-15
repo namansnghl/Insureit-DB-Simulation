@@ -1,8 +1,9 @@
 import argparse, getpass
-from backend import authenticate as auth
-import commands
+from .backend import authenticate as auth
+import insurit.commands as commands
 
-if __name__ == "__main__":
+
+def main():
     login_command = "login"
     start_service = "connect"
     parser = argparse.ArgumentParser(
@@ -43,3 +44,7 @@ if __name__ == "__main__":
             commands.run(args.username, parser)
         else:
             print("Authentication failed. Incorrect Username/Password.")
+
+
+if __name__ == "__main__":
+    main()
