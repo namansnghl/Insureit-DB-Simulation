@@ -40,6 +40,12 @@ CREATE TABLE IF NOT EXISTS HomePolicy_detail (
   Policy_type varchar(255)
 );
 
+CREATE TABLE IF NOT EXISTS Report_Details (
+  Report_id integer PRIMARY KEY,
+  Date date,
+  Damage_amount integer
+);
+
 CREATE TABLE IF NOT EXISTS Finance_details (
   SSN integer,
   Customer_id integer PRIMARY KEY,
@@ -125,11 +131,6 @@ CREATE TABLE IF NOT EXISTS Claim(
   foreign key(Holder_id) references Policy_Holder(Holder_id)
 );
 
-CREATE TABLE IF NOT EXISTS Report_Details (
-  Report_id integer PRIMARY KEY,
-  Date date,
-  Damage_amount integer
-);
 
 CREATE TABLE IF NOT EXISTS Report(
 	Report_id integer,

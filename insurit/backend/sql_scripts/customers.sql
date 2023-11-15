@@ -49,4 +49,5 @@ INSERT INTO Customer VALUES (415216, 'Nonnah Trass', '370-533-6961', 'ntrass1a@a
 INSERT INTO Customer VALUES (733572, 'Dmitri Simmen', '228-899-5566', 'dsimmen1b@hibu.com', '505 Gateway Street', 'No');
 INSERT INTO Customer VALUES (74341, 'Cello Fassan', '467-460-7623', 'cfassan1c@google.com.br', '70873 Ludington Court', 'No');
 INSERT INTO Customer VALUES (249650, 'Curry Riggs', '895-961-5847', 'criggs1d@independent.co.uk', '3 Spenser Hill', 'No');
+
 commit;

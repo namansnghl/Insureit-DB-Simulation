@@ -11,4 +11,5 @@ INSERT INTO AutoPolicy_detail VALUES (119,'Guardian Auto Insurance','Electric Ca
 INSERT INTO AutoPolicy_detail VALUES (120,'DriveSure Insuranc','SUV','Policy tailored for frequent travelers, offering coverage for rental cars and drivers in multiple states.','Active',80000,12,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (121,'Liberty Auto Assurance','Sedan & SUV','Standard coverage for collisions and comprehensive damages, with optional add-ons for enhanced protection.','Active',50000,12,'Auto');
 INSERT INTO AutoPolicy_detail VALUES (122,'ABC Plan','Sedan & SUV','Basic coverage for liability and medical expenses, suitable for low-risk drivers.','Inactive',40000,12,'Auto');
+
 commit;
