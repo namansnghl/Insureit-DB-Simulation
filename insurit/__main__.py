@@ -1,6 +1,6 @@
 import argparse, getpass
 from backend import authenticate as auth
-import user_commands
+import commands
 
 if __name__ == "__main__":
     login_command = "login"
@@ -40,6 +40,6 @@ if __name__ == "__main__":
     elif args.command == login_command:
         if auth.login(args.username, args.password):
             print("Authentication successful.\nWelcome ", args.username)
-            user_commands.run(args.username, parser)
+            commands.run(args.username, parser)
         else:
             print("Authentication failed. Incorrect Username/Password.")
