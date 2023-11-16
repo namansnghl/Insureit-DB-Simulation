@@ -2,3 +2,4 @@
 # make_payment()
 # calc_premium()
 # check_dues()
+# add_penalty() NAMAN

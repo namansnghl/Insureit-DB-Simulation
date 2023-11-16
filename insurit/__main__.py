@@ -36,7 +36,7 @@ def main():
     elif args.command == start_service:
         conn = Connection(hostname=args.hostname, port=args.port, username=args.username)
         conn.fetch_creds()
-        conn.connect()
+        conn.connect() # TODO save the state of this conn somehow
     # if asked to log in
     elif args.command == login_command:
         if auth.login(args.username, args.password):
