@@ -1,14 +1,14 @@
-Agent_id,Name,Phone,Email,Salary
-6768,Brunhilda Smyley,611-265-3125,bsmyley2@topsy.com,547082
-13041,Raddie Basson,560-368-3460,rbassona@psu.edu,300977
-33645,Worden Rosedale,342-776-4301,wrosedalec@over-blog.com,163238
-52121,Kaitlin Ruter,188-177-5814,kruter3@wikimedia.org,525745
-69259,Bonnibelle Manchett,839-488-0561,bmanchett9@buzzfeed.com,552776
-73812,Bertha Gibbe,688-502-8799,bgibbe5@mapquest.com,820523
-78600,Veronika Pestricke,832-194-4030,vpestrickeb@hhs.gov,295584
-80340,Lynnell Pixton,297-990-1742,lpixton1@yellowbook.com,852715
-85926,Joshuah Devas,820-918-3141,jdevas4@google.es,734363
-92085,Erinn Minchindon,436-379-1334,eminchindon7@theatlantic.com,318714
-92900,Rhonda Mayhead,881-274-4756,rmayhead8@bloomberg.com,400885
-95189,Stefa Cours,882-723-7290,scours6@odnoklassniki.ru,755473
-97444,Eolanda Tillerton,530-528-4376,etillerton0@nydailynews.com,512292
+Agent_id,Name,Email,Phone,Salary
+6768,Brunhilda Smyley,bsmyley2@topsy.com,611-265-3125,547082
+13041,Raddie Basson,rbassona@psu.edu,560-368-3460,300977
+33645,Worden Rosedale,wrosedalec@over-blog.com,342-776-4301,163238
+52121,Kaitlin Ruter,kruter3@wikimedia.org,188-177-5814,525745
+69259,Bonnibelle Manchett,bmanchett9@buzzfeed.com,839-488-0561,552776
+73812,Bertha Gibbe,bgibbe5@mapquest.com,688-502-8799,820523
+78600,Veronika Pestricke,vpestrickeb@hhs.gov,832-194-4030,295584
+80340,Lynnell Pixton,lpixton1@yellowbook.com,297-990-1742,852715
+85926,Joshuah Devas,jdevas4@google.es,820-918-3141,734363
+92085,Erinn Minchindon,eminchindon7@theatlantic.com,436-379-1334,318714
+92900,Rhonda Mayhead,rmayhead8@bloomberg.com,881-274-4756,400885
+95189,Stefa Cours,scours6@odnoklassniki.ru,882-723-7290,755473
+97444,Eolanda Tillerton,etillerton0@nydailynews.com,530-528-4376,512292
