@@ -18,27 +18,28 @@ CREATE TABLE IF NOT EXISTS Agents(
   Salary integer
 );
 
-CREATE TABLE IF NOT EXISTS AutoPolicy_detail(
-  Auto_Policy_id integer PRIMARY KEY,
-  Name varchar(255),
-  Type varchar(255),
-  Description varchar(255),
-  Policy_active_flag varchar(255),
-  Sum_assured integer,
-  Tenure integer,
-  Policy_type varchar(255)
+CREATE TABLE AutoPolicy_detail (
+    Auto_Policy_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Type VARCHAR(255),
+    Description VARCHAR(255),
+    Policy_active_flag VARCHAR(255),
+    Sum_assured INTEGER,
+    Tenure INTEGER,
+    Policy_type VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS HomePolicy_detail (
-  Home_Policy_id integer PRIMARY KEY,
-  Name varchar(255),
-  Type varchar(255),
-  Description varchar(255),
-  Policy_active_flag varchar(255),
-  Sum_assured integer,
-  Tenure integer,
-  Policy_type varchar(255)
+CREATE TABLE HomePolicy_detail (
+    Home_Policy_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Type VARCHAR(255),
+    Description VARCHAR(255),
+    Policy_active_flag VARCHAR(255),
+    Sum_assured INTEGER,
+    Tenure INTEGER,
+    Policy_type VARCHAR(255)
 );
+
 
 CREATE TABLE IF NOT EXISTS Report_Details (
   Report_id integer PRIMARY KEY,
