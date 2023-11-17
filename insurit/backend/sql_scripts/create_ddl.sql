@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS Customer (
   Phone varchar(255),
   Email varchar(255),
   Address varchar(255),
-  Driving_license varchar(255)
+  Driving_license varchar(255),
+  Age integer
 );
 
 CREATE TABLE IF NOT EXISTS Agents(
