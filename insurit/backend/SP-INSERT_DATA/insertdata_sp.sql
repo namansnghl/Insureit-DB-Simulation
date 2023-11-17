@@ -1,58 +1,6 @@
 DELIMITER //
 CREATE PROCEDURE insertdata()
 BEGIN
-<<<<<<< Updated upstream
-INSERT INTO Customer VALUES (987673, 'Bidget Keaton', '778-475-2740', 'bkeaton0@netvibes.com', '4134 Jenifer Circle', 'Yes');
-INSERT INTO Customer VALUES (352841, 'Roderigo Sends', '865-535-4858', 'rsends1@elegantthemes.com', '73 Kenwood Terrace', 'Yes');
-INSERT INTO Customer VALUES (554593, 'Germain Metzig', '782-318-0312', 'gmetzig2@discuz.net', '94 Hoepker Hill', 'No');
-INSERT INTO Customer VALUES (778711, 'Hattie Kevern', '564-480-9848', 'hkevern3@nyu.edu', '40 Valley Edge Circle', 'Yes');
-INSERT INTO Customer VALUES (78932, 'Dorena Kingaby', '370-179-1371', 'dkingaby4@printfriendly.com', '13765 Petterle Circle', 'Yes');
-INSERT INTO Customer VALUES (319355, 'Leda Liffe', '768-317-1479', 'lliffe5@sun.com', '17870 Oxford Plaza', 'Yes');
-INSERT INTO Customer VALUES (719439, 'Hailey Titchener', '160-664-3603', 'htitchener6@cnet.com', '33085 Meadow Vale Way', 'Yes');
-INSERT INTO Customer VALUES (538409, 'Alyse Volleth', '977-218-2551', 'avolleth7@hhs.gov', '10 Kipling Court', 'No');
-INSERT INTO Customer VALUES (979749, 'Thalia Raitie', '846-557-5060', 'traitie8@comcast.net', '3 Melody Circle', 'No');
-INSERT INTO Customer VALUES (640537, 'Constanta Beresfore', '453-864-6762', 'cberesfore9@cargocollective.com', '35432 Charing Cross Avenue', 'No');
-INSERT INTO Customer VALUES (871428, 'Elfreda Callander', '143-883-7368', 'ecallandera@gnu.org', '8828 Forest Run Avenue', 'No');
-INSERT INTO Customer VALUES (847339, 'Brittney Mash', '690-401-9216', 'bmashb@nationalgeographic.com', '24753 Walton Trail', 'Yes');
-INSERT INTO Customer VALUES (94613, 'Cassandra Veitch', '312-814-1819', 'cveitchc@cbslocal.com', '850 Monument Avenue', 'Yes');
-INSERT INTO Customer VALUES (628418, 'Sianna Scay', '128-774-9848', 'sscayd@nps.gov', '9230 Waxwing Hill', 'Yes');
-INSERT INTO Customer VALUES (974101, 'Carlo Grimm', '786-476-8508', 'cgrimme@house.gov', '601 Upham Center', 'Yes');
-INSERT INTO Customer VALUES (930301, 'Hoebart Guidone', '751-282-1295', 'hguidonef@hubpages.com', '78 Thompson Hill', 'No');
-INSERT INTO Customer VALUES (915790, 'Erina Neligan', '755-787-5609', 'eneligang@delicious.com', '7 Summit Trail', 'Yes');
-INSERT INTO Customer VALUES (389080, 'Maurita Kleinplatz', '152-738-5550', 'mkleinplatzh@vimeo.com', '69920 Golf View Terrace', 'No');
-INSERT INTO Customer VALUES (336850, 'Arda Calderhead', '139-697-7506', 'acalderheadi@indiatimes.com', '736 Sauthoff Point', 'Yes');
-INSERT INTO Customer VALUES (176254, 'Correna Stitch', '602-865-3223', 'cstitchj@tripod.com', '15296 Bartillon Park', 'Yes');
-INSERT INTO Customer VALUES (638484, 'Angie Attow', '343-925-7380', 'aattowk@mapy.cz', '05 Summerview Junction', 'Yes');
-INSERT INTO Customer VALUES (621200, 'Augie Chene', '745-190-9290', 'achenel@omniture.com', '766 4th Parkway', 'Yes');
-INSERT INTO Customer VALUES (555849, 'Rochette Dowglass', '231-251-7850', 'rdowglassm@exblog.jp', '7906 Marcy Place', 'Yes');
-INSERT INTO Customer VALUES (972654, 'Berkly OGlessane', '326-742-8192', 'boglessanen@chicagotribune.com', '42236 Clove Plaza', 'Yes');
-INSERT INTO Customer VALUES (492977, 'Darb Tomsen', '658-767-5430', 'dtomseno@mashable.com', '31 Forest Run Alley', 'No');
-INSERT INTO Customer VALUES (77471, 'Guthrie Cortese', '770-414-1691', 'gcortesep@about.com', '0077 Sheridan Drive', 'No');
-INSERT INTO Customer VALUES (289060, 'Aundrea Abrahmer', '470-635-1811', 'aabrahmerq@yelp.com', '600 Haas Terrace', 'No');
-INSERT INTO Customer VALUES (166248, 'Gisela Kretchmer', '668-244-2155', 'gkretchmerr@list-manage.com', '64 Pawling Way', 'No');
-INSERT INTO Customer VALUES (830875, 'Hendrika Keynes', '174-384-6234', 'hkeyness@businessinsider.com', '1 Sommers Way', 'No');
-INSERT INTO Customer VALUES (591642, 'Derrick Vowells', '336-654-2002', 'dvowellst@cyberchimps.com', '77236 Hazelcrest Trail', 'No');
-INSERT INTO Customer VALUES (293654, 'Thomasin Boddymead', '867-190-2098', 'tboddymeadu@domainmarket.com', '618 Hanover Street', 'Yes');
-INSERT INTO Customer VALUES (532909, 'Flo Mackett', '412-351-4643', 'fmackettv@princeton.edu', '06 Longview Street', 'Yes');
-INSERT INTO Customer VALUES (109075, 'Darrel Gounot', '993-434-7131', 'dgounotw@gizmodo.com', '4 West Way', 'Yes');
-INSERT INTO Customer VALUES (174408, 'Harri Paolo', '790-698-5891', 'hpaolox@marriott.com', '3 Cordelia Center', 'No');
-INSERT INTO Customer VALUES (632251, 'Bendicty Gogay', '162-986-3633', 'bgogayy@toplist.cz', '164 Forest Plaza', 'Yes');
-INSERT INTO Customer VALUES (981115, 'Antonius Freschini', '600-340-9348', 'afreschiniz@behance.net', '610 Transport Parkway', 'Yes');
-INSERT INTO Customer VALUES (58082, 'Alfred Balshen', '140-400-3125', 'abalshen10@bloglines.com', '0 Glendale Parkway', 'Yes');
-INSERT INTO Customer VALUES (499661, 'Edy Toulamain', '302-814-3607', 'etoulamain11@irs.gov', '17892 Fairview Junction', 'No');
-INSERT INTO Customer VALUES (950610, 'Hilary Pockett', '278-453-0517', 'hpockett12@dailymail.co.uk', '3323 International Road', 'Yes');
-INSERT INTO Customer VALUES (358893, 'Kara-lynn Dallaway', '579-654-3410', 'kdallaway13@bbc.co.uk', '4 Milwaukee Park', 'Yes');
-INSERT INTO Customer VALUES (867938, 'Ricki Rayner', '643-725-5750', 'rrayner14@alexa.com', '956 Loftsgordon Point', 'Yes');
-INSERT INTO Customer VALUES (114971, 'Reeva Kupisz', '300-253-6630', 'rkupisz15@moonfruit.com', '6910 Bluestem Park', 'Yes');
-INSERT INTO Customer VALUES (365390, 'Wilfred Joel', '632-327-2233', 'wjoel16@whitehouse.gov', '450 Beilfuss Junction', 'Yes');
-INSERT INTO Customer VALUES (872585, 'Karilynn Seymour', '207-292-0041', 'kseymour17@blogtalkradio.com', '2 East Parkway', 'Yes');
-INSERT INTO Customer VALUES (144402, 'Dasha Hiscoe', '262-608-3656', 'dhiscoe18@livejournal.com', '6 Northfield Drive', 'No');
-INSERT INTO Customer VALUES (345273, 'Josee Honeywood', '223-375-2439', 'jhoneywood19@engadget.com', '6048 Spaight Parkway', 'No');
-INSERT INTO Customer VALUES (415216, 'Nonnah Trass', '370-533-6961', 'ntrass1a@apache.org', '46327 Ludington Place', 'No');
-INSERT INTO Customer VALUES (733572, 'Dmitri Simmen', '228-899-5566', 'dsimmen1b@hibu.com', '505 Gateway Street', 'No');
-INSERT INTO Customer VALUES (74341, 'Cello Fassan', '467-460-7623', 'cfassan1c@google.com.br', '70873 Ludington Court', 'No');
-INSERT INTO Customer VALUES (249650, 'Curry Riggs', '895-961-5847', 'criggs1d@independent.co.uk', '3 Spenser Hill', 'No');
-=======
 INSERT INTO Customer VALUES (58082,'Alfred Balshen','140-400-3125','abalshen10@bloglines.com','0 Glendale Parkway','Yes',58);
 INSERT INTO Customer VALUES (74341,'Cello Fassan','467-460-7623','cfassan1c@google.com.br','70873 Ludington Court','No',66);
 INSERT INTO Customer VALUES (77471,'Guthrie Cortese','770-414-1691','gcortesep@about.com','0077 Sheridan Drive','No',65);
@@ -103,7 +51,6 @@ INSERT INTO Customer VALUES (974101,'Carlo Grimm','786-476-8508','cgrimme@house.
 INSERT INTO Customer VALUES (979749,'Thalia Raitie','846-557-5060','traitie8@comcast.net','3 Melody Circle','No',39);
 INSERT INTO Customer VALUES (981115,'Antonius Freschini','600-340-9348','afreschiniz@behance.net','610 Transport Parkway','Yes',80);
 INSERT INTO Customer VALUES (987673,'Bidget Keaton','778-475-2740','bkeaton0@netvibes.com','4134 Jenifer Circle','Yes',56);
->>>>>>> Stashed changes
 
 INSERT INTO Agents VALUES (6768,'Brunhilda Smyley','bsmyley2@topsy.com','611-265-3125',547082);
 INSERT INTO Agents VALUES (13041,'Raddie Basson','rbassona@psu.edu','560-368-3460',300977);
@@ -144,10 +91,7 @@ INSERT INTO HomePolicy_detail VALUES (108,'SmartGuard Home Insurance','Owned','C
 INSERT INTO HomePolicy_detail VALUES (109,'SafeHome Solutions','Owned','High-value policy with features like identity theft protection, credit card coverage, and coverage for unauthorized transactions due to cybercrime.','Active',555000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (110,'HomeAssure Services','Rent','Policy offering coverage for home systems and appliances, such as HVAC, electrical, and plumbing, providing financial protection against unexpected repair or replacement costs.','Active',400000,12,'Home');
 INSERT INTO HomePolicy_detail VALUES (111,'One Home Insurance','Owned','Long-term policy with perks like extended coverage for valuables, home office equipment, and reimbursement for temporary housing and meals during repairs.','Inactive',250000,12,'Home');
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Report_Details VALUES (1,'2023-04-11',4900);
 INSERT INTO Report_Details VALUES (2,'2023-10-12',4034);
 INSERT INTO Report_Details VALUES (3,'2023-07-30',4697);
@@ -229,10 +173,7 @@ INSERT INTO Finance_details VALUES (198089791, 415216, '3321119986', 20601508.0,
 INSERT INTO Finance_details VALUES (518012262, 733572, '3546730823', 30788.44, 'Bank of America', 'Standard');
 INSERT INTO Finance_details VALUES (465939571, 74341, '2475885785', 30788.44, 'Citigroup', 'Standard');
 INSERT INTO Finance_details VALUES (860361556, 249650, '1238315826', 20574.47, 'TD Bank', 'Standard');
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Loan VALUES ('LP001015','Home',30,110000.0,987673);
 INSERT INTO Loan VALUES ('LP001022','Vehicle',30,126000.0,987673);
 INSERT INTO Loan VALUES ('LP001031','Home',30,208000.0,352841);
@@ -288,10 +229,7 @@ INSERT INTO Loan VALUES ('LP001287','Home',30,120000.0,621200);
 INSERT INTO Loan VALUES ('LP001291','Home',30,160000.0,621200);
 INSERT INTO Loan VALUES ('LP001298','Home',15,30000.0,847339);
 INSERT INTO Loan VALUES ('LP001312','Vehicle',30,92000.0,847339);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Policy_Holder VALUES (1,492977,106,120,'Active','2022-06-22 00:00:00','2022-10-29 00:00:00', '2023-05-27 00:00:00','Yes',13041);
 INSERT INTO Policy_Holder VALUES (2,176254,107,116,'Active','2022-02-19 00:00:00','2022-10-29 00:00:00', '2023-02-09 00:00:00','Yes',6768);
 INSERT INTO Policy_Holder VALUES (3,345273,101,122,'Inactive','2022-06-26 00:00:00','2022-08-18 00:00:00', '2023-04-27 00:00:00','Yes',85926);
@@ -342,10 +280,7 @@ INSERT INTO Policy_Holder VALUES (47,972654,104,113,'Inactive','2022-05-07 00:00
 INSERT INTO Policy_Holder VALUES (48,58082,110,111,'Active','2022-01-18 00:00:00','2022-09-02 00:00:00', '2023-01-18 00:00:00','Yes',95189);
 INSERT INTO Policy_Holder VALUES (49,166248,106,113,'Inactive','2022-02-16 00:00:00','2022-08-07 00:00:00', '2023-06-21 00:00:00','Yes',33645);
 INSERT INTO Policy_Holder VALUES (50,847339,109,119,'Inactive','2022-03-02 00:00:00','2022-07-29 00:00:00', '2023-02-05 00:00:00','No',80340);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Vehicle_Details VALUES (1,'Two Wheeler','Vehicle_1','Honda',7,'No damage',2,42,'LP001135');
 INSERT INTO Vehicle_Details VALUES (2,'Two Wheeler','Vehicle_2','Lincoln',7,'Some damage',2,37,'LP001177');
 INSERT INTO Vehicle_Details VALUES (3,'Two Wheeler','Vehicle_3','Lincoln',5,'No damage',2,41,'LP001219');
@@ -446,10 +381,7 @@ INSERT INTO Vehicle_Details VALUES (97,'Four Wheeler','Vehicle_97','Toyota',1,'N
 INSERT INTO Vehicle_Details VALUES (98,'Four Wheeler','Vehicle_98','BMW',4,'High damage',3,25,'LP001083');
 INSERT INTO Vehicle_Details VALUES (99,'Two Wheeler','Vehicle_99','Mazda',7,'High damage',2,4,'LP001015');
 INSERT INTO Vehicle_Details VALUES (100,'Two Wheeler','Vehicle_100','Mercedes',2,'High damage',1,41,'LP001185');
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Home_Details VALUES (1111, '3009 Danielle Center Suite 308 North Jenniferland, ID 76511', 40.0, 'Old', 385949, 18, 7, 'LP001226');
 INSERT INTO Home_Details VALUES (1112, '748 Castillo Divide Suite 510 Lake Kristybury, MH 32946', 42.0, 'New', 184066, 2, 48, 'LP001287');
 INSERT INTO Home_Details VALUES (1113, '001 Morgan Views Apt. 731 New Kimberlychester, MT 37668', 45.0, 'New', 217377, 5, 14, 'LP001210');
@@ -500,10 +432,7 @@ INSERT INTO Home_Details VALUES (1157, '06065 Vincent Pines Johnburgh, WA 11007'
 INSERT INTO Home_Details VALUES (1158, '885 Brock Trail Williamston, UT 62571', 90.0, 'New', 323596, 2, 28, 'LP001208');
 INSERT INTO Home_Details VALUES (1159,'Unit 3885 Box 7739 DPO AP 55204',90.0,'New',84344,3,16,'LP001284');
 INSERT INTO Home_Details VALUES (1160,'USS Perez FPO AE 25873',95.0,'New',191756,2,49,'LP001031');
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Transactions VALUES (098725,'2017-03-10','Pending',49668,719439,27);
 INSERT INTO Transactions VALUES (603071,'2017-03-21','Pending',18303,345273,28);
 INSERT INTO Transactions VALUES (136633,'2017-07-11','Failed',16434,249650,21);
@@ -554,10 +483,7 @@ INSERT INTO Transactions VALUES (674674,'2017-12-29','Pending',5244,538409,45);
 INSERT INTO Transactions VALUES (661066,'2017-03-10','Failed',18612,872585,22);
 INSERT INTO Transactions VALUES (082963,'2017-11-01','Failed',6382,719439,12);
 INSERT INTO Transactions VALUES (729563,'2017-12-05','Failed',1872,872585,42);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Claim VALUES (8270,4943,'2022-01-01',32);
 INSERT INTO Claim VALUES (1860,24939,'2022-01-15',2);
 INSERT INTO Claim VALUES (6390,20457,'2022-01-30',14);
@@ -608,10 +534,7 @@ INSERT INTO Claim VALUES (1775,14986,'2023-11-16',6);
 INSERT INTO Claim VALUES (9226,13666,'2023-12-01',14);
 INSERT INTO Claim VALUES (4152,39660,'2023-12-16',32);
 INSERT INTO Claim VALUES (2585,4561,'2023-12-31',19);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 INSERT INTO Report VALUES (26,82,1132,6578);
 INSERT INTO Report VALUES (8,24,1141,8270);
 INSERT INTO Report VALUES (13,89,1148,6578);
