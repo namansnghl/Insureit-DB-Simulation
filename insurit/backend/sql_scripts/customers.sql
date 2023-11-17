@@ -1,3 +1,4 @@
+use insurit;
 INSERT INTO Customer VALUES (58082,'Alfred Balshen','140-400-3125','abalshen10@bloglines.com','0 Glendale Parkway','Yes',58);
 INSERT INTO Customer VALUES (74341,'Cello Fassan','467-460-7623','cfassan1c@google.com.br','70873 Ludington Court','No',66);
 INSERT INTO Customer VALUES (77471,'Guthrie Cortese','770-414-1691','gcortesep@about.com','0077 Sheridan Drive','No',65);
@@ -48,5 +49,5 @@ INSERT INTO Customer VALUES (974101,'Carlo Grimm','786-476-8508','cgrimme@house.
 INSERT INTO Customer VALUES (979749,'Thalia Raitie','846-557-5060','traitie8@comcast.net','3 Melody Circle','No',39);
 INSERT INTO Customer VALUES (981115,'Antonius Freschini','600-340-9348','afreschiniz@behance.net','610 Transport Parkway','Yes',80);
 INSERT INTO Customer VALUES (987673,'Bidget Keaton','778-475-2740','bkeaton0@netvibes.com','4134 Jenifer Circle','Yes',56);
-
+commit;
 
