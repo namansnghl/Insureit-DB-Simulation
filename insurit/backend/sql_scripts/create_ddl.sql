@@ -11,6 +11,13 @@ CREATE TABLE IF NOT EXISTS Customer (
   Age integer
 );
 
+CREATE TABLE IF NOT EXISTS Secrets (
+    Customer_id INTEGER PRIMARY KEY,
+    USERNAME VARCHAR(10),
+    SECRET VARCHAR(20),
+    FOREIGN KEY (Customer_id) REFERENCES CUSTOMER(Customer_id)
+);
+
 CREATE TABLE IF NOT EXISTS Agents(
   Agent_id integer PRIMARY KEY,
   Name varchar(255),
