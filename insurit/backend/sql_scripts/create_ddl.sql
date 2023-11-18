@@ -130,6 +130,7 @@ CREATE TABLE IF NOT EXISTS Claim(
   Claim_amount integer,
   Date date,
   Holder_id integer,
+  claim_status varchar(1) DEFAULT 'P',
   foreign key(Holder_id) references Policy_Holder(Holder_id)
 );
 
