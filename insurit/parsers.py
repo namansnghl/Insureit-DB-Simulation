@@ -5,28 +5,31 @@ class CustomParsers:
     def __init__(self):
         self.parser = argparse.ArgumentParser()
 
-    def create_parser(self):
+    def _create_parser(self):
         raise NotImplementedError("Subclasses must implement the create_parser class method")
 
     def show_help(self):
         self.parser.print_help()
         print("Use '--help' for more information.")
 
-    def parse(self, user_input: str):
-        parts = shlex.split(user_input)
-        try:
-            return self.parser.parse_args(parts)
-        except:
+    def parse(self, user_input: str = None):
+        if not user_input:
             self.show_help()
+        else:
+            parts = shlex.split(user_input)
+            try:
+                return self.parser.parse_args(parts)
+            except:
+                self.show_help()
 
 
 class CustomerParser(CustomParsers):
     def __init__(self):
         super().__init__()
-        self.subparser = self.parser.add_subparsers(dest='customer', help='Parse customer commands')
-        self.__create_parser()
+        self.subparser = self.parser.add_subparsers(dest='customer', title='Available customer operations')
+        self._create_parser()
 
-    def __create_parser(self):
+    def _create_parser(self):
         self._premium_pay()
         self._policy_view()
         self._edit_acct()

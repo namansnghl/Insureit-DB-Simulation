@@ -69,16 +69,17 @@ def run(app: str, conn):
 
 def loggedin(app: str, username: str, access: int) -> int:
     global connection
-
     access_levels = [RootParser, AgentParser, CustomerParser]
-    parser = access_levels[access]
+    parser = access_levels[-1]()
 
 
     while True:
         user_input = input(f"{app} {username}> ")
         if not user_input:
             continue
-
+        if user_input in ['-h', '--help']:
+            parser.show_help()
+            continue
         if user_input.lower().strip() == 'exit':
             break
         if user_input.lower().strip() == 'logout':
