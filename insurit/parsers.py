@@ -26,7 +26,7 @@ class CustomParsers:
 class CustomerParser(CustomParsers):
     def __init__(self):
         super().__init__()
-        self.subparser = self.parser.add_subparsers(dest='customer', title='Available customer operations')
+        self.subparser = self.parser.add_subparsers(dest='client', title='Available customer operations')
         self._create_parser()
 
     def _create_parser(self):
@@ -67,14 +67,34 @@ class CustomerParser(CustomParsers):
 class AgentParser(CustomParsers):
     def __init__(self):
         super().__init__()
+        self.subparser = self.parser.add_subparsers(dest='agent', title='Available Agent operations')
+        self._create_parser()
 
-    def create_parser(self):
-        ...
+    def _create_parser(self):
+        self._cust()
+        self._policy()
+
+    def _cust(self):
+        cust = self.subparser.add_parser('client', help='Manage your customer')
+        cust.add_argument('-n', '--new', action='store_true', help="Register new client")
+        cust.add_argument("--show", action='store_true', help="Display all clients under you")
+
+    def _policy(self):
+        pol = self.subparser.add_parser('policy', help="Perform policy related Operations")
+        pol.add_argument('--at-risk', action='store_true', help="Show clients with policy terms at risk")
+        pol.add_argument('--calc-premium', action='store_true', help="Calculate policy premium for a potential client")
 
 
 class RootParser(CustomParsers):
     def __init__(self):
         super().__init__()
+        self.subparser = self.parser.add_subparsers(dest='root', title='Available Administrator operations')
+        self._create_parser()
 
-    def create_parser(self):
-        ...
+    def _create_parser(self):
+        self._agent()
+
+    def _agent(self):
+        a = self.subparser.add_parser('agent', help='Manage agents')
+        a.add_argument('-n', '--new', action='store_true', help="Register new agent")
+        a.add_argument("--show", action='store_true', help="Display all agents")
