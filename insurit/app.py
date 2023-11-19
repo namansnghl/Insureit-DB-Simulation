@@ -70,7 +70,7 @@ def run(app: str, conn):
 def loggedin(app: str, username: str, access: int) -> int:
     global connection
     access_levels = [RootParser, AgentParser, CustomerParser]
-    parser = access_levels[-1]()
+    parser = access_levels[access]()
 
 
     while True:
