@@ -2,6 +2,7 @@ import argparse
 import shlex
 from .backend import authenticate as auth
 from .backend.db_manager import Connection
+from .parsers import CustomerParser, AgentParser, RootParser
 
 connection = None
 
@@ -33,6 +34,8 @@ def run(app: str, conn):
 
     while True:
         user_input = input(f"\n{app}> ")
+        if not user_input:
+            continue
         if user_input.strip().lower() in ['exit', 'cancel', 'disconnect']:
             Connection.disconnect(conn)
             print("Connection closed, Exiting...")
@@ -53,7 +56,7 @@ def run(app: str, conn):
         else:
             if auth.login(conn.cursor(), args.username, args.password, levels[args.command]):
                 print("Authentication successful.\nWelcome ", args.username)
-                if loggedin(app, args.username):
+                if loggedin(app, args.username, levels[args.command]):
                     user_input = 'exit'
             else:
                 print("Authentication failed. Incorrect Username/Password.")
@@ -64,19 +67,25 @@ def run(app: str, conn):
             break
 
 
-def loggedin(app: str, username: str) -> int:
+def loggedin(app: str, username: str, access: int) -> int:
     global connection
-    parser = argparse.ArgumentParser(description="Your script description")
-    # Add argparse commands
+
+    access_levels = [RootParser, AgentParser, CustomerParser]
+    parser = access_levels[access]
+
 
     while True:
         user_input = input(f"{app} {username}> ")
+        if not user_input:
+            continue
 
-        if user_input.lower() == 'exit':
+        if user_input.lower().strip() == 'exit':
             break
-        if user_input.lower() == 'logout':
+        if user_input.lower().strip() == 'logout':
             print("Logging you out...\n")
             return 0
+
+        args = parser.parse(user_input)
 
         print(f"Running command: {user_input}")
 
