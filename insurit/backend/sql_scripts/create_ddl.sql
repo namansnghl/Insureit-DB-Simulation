@@ -1,9 +1,8 @@
 create database IF NOT EXISTS insurit;
 use insurit;
 
---Added autoincrement here
 CREATE TABLE IF NOT EXISTS Customer (
-  Customer_id integer PRIMARY KEY,
+  Customer_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Phone varchar(255),
   Email varchar(255),
@@ -22,7 +21,7 @@ INSERT INTO INSURIT.SECRETS (id, USERNAME, SECRET, LVL)
 VALUES (0, 'root', SHA2(LOWER('root'), 256), 0);
 
 CREATE TABLE IF NOT EXISTS Agents(
-  Agent_id integer PRIMARY KEY,
+  Agent_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Email varchar(255),
   Phone varchar(255),
