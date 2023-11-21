@@ -2,7 +2,7 @@ create database IF NOT EXISTS insurit;
 use insurit;
 
 CREATE TABLE IF NOT EXISTS Customer (
-  Customer_id integer PRIMARY KEY,
+  Customer_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Phone varchar(255),
   Email varchar(255),
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS Customer (
 );
 
 CREATE TABLE IF NOT EXISTS Agents(
-  Agent_id integer PRIMARY KEY,
+  Agent_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Email varchar(255),
   Phone varchar(255),
