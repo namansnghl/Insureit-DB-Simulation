@@ -2,43 +2,54 @@ create database IF NOT EXISTS insurit;
 use insurit;
 
 CREATE TABLE IF NOT EXISTS Customer (
-  Customer_id integer PRIMARY KEY,
+  Customer_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Phone varchar(255),
   Email varchar(255),
   Address varchar(255),
-  Driving_license varchar(255)
+  Driving_license varchar(255),
+  Age integer
 );
 
+CREATE TABLE IF NOT EXISTS Secrets (
+    id INTEGER PRIMARY KEY,
+    USERNAME VARCHAR(20),
+    SECRET VARCHAR(255),
+    LVL INT
+);
+INSERT INTO INSURIT.SECRETS (id, USERNAME, SECRET, LVL)
+VALUES (0, 'root', SHA2(LOWER('root'), 256), 0);
+
 CREATE TABLE IF NOT EXISTS Agents(
-  Agent_id integer PRIMARY KEY,
+  Agent_id integer PRIMARY KEY auto_increment,
   Name varchar(255),
   Email varchar(255),
   Phone varchar(255),
   Salary integer
 );
 
-CREATE TABLE IF NOT EXISTS AutoPolicy_detail(
-  Auto_Policy_id integer PRIMARY KEY,
-  Name varchar(255),
-  Type varchar(255),
-  Description varchar(255),
-  Policy_active_flag varchar(255),
-  Sum_assured integer,
-  Tenure integer,
-  Policy_type varchar(255)
+CREATE TABLE AutoPolicy_detail (
+    Auto_Policy_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Type VARCHAR(255),
+    Description VARCHAR(255),
+    Policy_active_flag VARCHAR(255),
+    Sum_assured INTEGER,
+    Tenure INTEGER,
+    Policy_type VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS HomePolicy_detail (
-  Home_Policy_id integer PRIMARY KEY,
-  Name varchar(255),
-  Type varchar(255),
-  Description varchar(255),
-  Policy_active_flag varchar(255),
-  Sum_assured integer,
-  Tenure integer,
-  Policy_type varchar(255)
+CREATE TABLE HomePolicy_detail (
+    Home_Policy_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Type VARCHAR(255),
+    Description VARCHAR(255),
+    Policy_active_flag VARCHAR(255),
+    Sum_assured INTEGER,
+    Tenure INTEGER,
+    Policy_type VARCHAR(255)
 );
+
 
 CREATE TABLE IF NOT EXISTS Report_Details (
   Report_id integer PRIMARY KEY,
@@ -128,6 +139,7 @@ CREATE TABLE IF NOT EXISTS Claim(
   Claim_amount integer,
   Date date,
   Holder_id integer,
+  claim_status varchar(50) DEFAULT 'P',
   foreign key(Holder_id) references Policy_Holder(Holder_id)
 );
 

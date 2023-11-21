@@ -1,52 +1,104 @@
 use insurit;
-INSERT INTO Home_Details VALUES (1111, '3009 Danielle Center Suite 308 North Jenniferland, ID 76511', 40.0, 'Old', 385949, 18, 7, 'LP001226');
-INSERT INTO Home_Details VALUES (1112, '748 Castillo Divide Suite 510 Lake Kristybury, MH 32946', 42.0, 'New', 184066, 2, 48, 'LP001287');
-INSERT INTO Home_Details VALUES (1113, '001 Morgan Views Apt. 731 New Kimberlychester, MT 37668', 45.0, 'New', 217377, 5, 14, 'LP001210');
-INSERT INTO Home_Details VALUES (1114, '9520 George Summit Suite 971 Guerreroburgh, AZ 66844', 46.0, 'New', 169897, 4, 3, 'LP001015');
-INSERT INTO Home_Details VALUES (1115, '061 Brown Mountains Apt. 800 South Christinechester, CO 90689', 55.0, 'Old', 109943, 11, 18, 'LP001242');
-INSERT INTO Home_Details VALUES (1116, '3922 Karen Mountain Katherineport, DC 40003', 55.0, 'New', 292367, 3, 7, 'LP001108');
-INSERT INTO Home_Details VALUES (1117, '0135 Foster Prairie Suite 021 Brittanyside, AK 29112', 60.0, 'New', 369417, 4, 39, 'LP001055');
-INSERT INTO Home_Details VALUES (1118, '32563 Lacey Shoal Jamesfort, NE 24868', 62.0, 'Old', 101699, 13, 16, 'LP001163');
-INSERT INTO Home_Details VALUES (1119, '4809 Spears Walks Cunninghamchester, TX 74179', 64.0, 'New', 389887, 2, 42, 'LP001153');
-INSERT INTO Home_Details VALUES (1120, '83168 Arnold Forge Youngberg, IA 97019', 65.0, 'New', 75642, 8, 47, 'LP001031');
-INSERT INTO Home_Details VALUES (1121, 'USNV Caldwell FPO AE 27939', 65.0, 'Old', 212392, 14, 22, 'LP001231');
-INSERT INTO Home_Details VALUES (1122, '45598 Christopher Passage East Joannaland, FM 39512', 65.0, 'New', 390273, 5, 6, 'LP001312');
-INSERT INTO Home_Details VALUES (1123, '94552 Brandon Field Orrhaven, NC 19954', 65.0, 'Old', 438419, 14, 39, 'LP001176');
-INSERT INTO Home_Details VALUES (1124, '23332 Amber Terrace Shelbyside, MA 85270', 65.0, 'Old', 162020, 15, 7, 'LP001094');
-INSERT INTO Home_Details VALUES (1125, '01564 Jeremy Road Vaughnside, FM 93776', 65.0, 'Old', 495857, 14, 38, 'LP001242');
-INSERT INTO Home_Details VALUES (1126, '630 Donna Corner Suite 932 Lake Robert, AK 77440', 65.0, 'Old', 133986, 12, 35, 'LP001108');
-INSERT INTO Home_Details VALUES (1127, '284 Burch Manor Kevinbury, UT 57161', 67.0, 'New', 107756, 2, 31, 'LP001096');
-INSERT INTO Home_Details VALUES (1128, '8691 Zamora Locks Apt. 105 South Caleb, DC 82635', 68.0, 'Old', 263533, 13, 41, 'LP001099');
-INSERT INTO Home_Details VALUES (1129, '18786 Brown Well Suite 770 Williamsborough, NY 19633', 70.0, 'Old', 164160, 14, 47, 'LP001268');
-INSERT INTO Home_Details VALUES (1130, '127 Victor Causeway Apt. 899 Davidville, CT 18729', 70.0, 'New', 317891, 1, 14, 'LP001220');
-INSERT INTO Home_Details VALUES (1131, '807 David Brook Apt. 212 West Alyssa, PW 40731', 70.0, 'Old', 410420, 18, 47, 'LP001067');
-INSERT INTO Home_Details VALUES (1132, '97225 Jennifer Prairie Apt. 772 Williamside, GU 46081', 70.0, 'Old', 52771, 15, 3, 'LP001298');
-INSERT INTO Home_Details VALUES (1133, '73758 William Plains Apt. 756 Port Angela, HI 90946', 70.0, 'Old', 472568, 16, 7, 'LP001067');
-INSERT INTO Home_Details VALUES (1134, '55480 Huang Stream Claybury, MT 53758', 70.0, 'Old', 101893, 11, 31, 'LP001270');
-INSERT INTO Home_Details VALUES (1135, '295 Pamela Port Apt. 786 Kathrynside, WV 19630', 70.0, 'New', 407567, 10, 36, 'LP001121');
-INSERT INTO Home_Details VALUES (1136, '0096 Matthew Springs North Nathanview, MT 41960', 73.0, 'Old', 266015, 12, 7, 'LP001185');
-INSERT INTO Home_Details VALUES (1137, '3514 Moody Ways Apt. 592 Ryanland, IN 03828', 75.0, 'Old', 289124, 20, 14, 'LP001232');
-INSERT INTO Home_Details VALUES (1138, '3737 Horton Run Davidstad, MI 16684', 75.0, 'Old', 79426, 14, 3, 'LP001022');
-INSERT INTO Home_Details VALUES (1139, '300 Sean Crossing West Gregory, IN 74062', 75.0, 'New', 97341, 3, 10, 'LP001312');
-INSERT INTO Home_Details VALUES (1140, '7160 Howe Islands West Kevin, VT 58443', 75.0, 'New', 96660, 8, 17, 'LP001054');
-INSERT INTO Home_Details VALUES (1141, '6695 Olson Flat Apt. 198 West Connieborough, KY 44936', 75.0, 'Old', 394416, 20, 35, 'LP001187');
-INSERT INTO Home_Details VALUES (1142, '198 Baldwin Alley Suite 153 Port Lindseyport, IN 82950', 80.0, 'Old', 79251, 17, 45, 'LP001176');
-INSERT INTO Home_Details VALUES (1143, '573 Matthew Valleys Apt. 703 West Brenda, TN 22751', 80.0, 'New', 403847, 7, 30, 'LP001237');
-INSERT INTO Home_Details VALUES (1144, '3352 Johnson Track Apt. 498 Staceyfort, AK 76235', 80.0, 'Old', 299328, 18, 20, 'LP001298');
-INSERT INTO Home_Details VALUES (1145, '8739 Crawford Villages East Beckyburgh, FM 17594', 80.0, 'Old', 224027, 18, 28, 'LP001105');
-INSERT INTO Home_Details VALUES (1146, '36129 Daniels Gateway Suite 721 Medinaton, DC 21537', 80.0, 'Old', 248709, 18, 42, 'LP001153');
-INSERT INTO Home_Details VALUES (1147, '696 Barker Spurs East Tannerport, FL 70496', 80.0, 'New', 125109, 5, 16, 'LP001094');
-INSERT INTO Home_Details VALUES (1148, '322 Austin Island Suite 372 Millerberg, WY 43411', 80.0, 'Old', 295590, 19, 27, 'LP001270');
-INSERT INTO Home_Details VALUES (1149, '5766 Teresa Ports Martinezside, ND 91968', 82.0, 'New', 209576, 2, 23, 'LP001287');
-INSERT INTO Home_Details VALUES (1150, '07244 Jennifer Branch Suite 737 Leslieton, AZ 59679', 83.0, 'New', 204241, 2, 34, 'LP001115');
-INSERT INTO Home_Details VALUES (1151, '9644 Kenneth Terrace Apt. 157 Kaitlynland, NJ 45793', 84.0, 'Old', 55990, 15, 26, 'LP001054');
-INSERT INTO Home_Details VALUES (1152, '11841 Gregory Roads Suite 460 Gillburgh, UT 09524', 85.0, 'New', 56627, 8, 16, 'LP001210');
-INSERT INTO Home_Details VALUES (1153, '676 Howell Road Suite 490 East Amberview, MT 76101', 85.0, 'Old', 290656, 12, 14, 'LP001022');
-INSERT INTO Home_Details VALUES (1154, '782 Christine Spur Jacobshire, AZ 33859', 86.0, 'New', 149871, 2, 32, 'LP001203');
-INSERT INTO Home_Details VALUES (1155, '287 Kramer Burg Millerbury, NE 21755', 90.0, 'Old', 240705, 14, 5, 'LP001059');
-INSERT INTO Home_Details VALUES (1156, 'Unit 7296 Box 0767 DPO AP 85217', 90.0, 'New', 214155, 1, 23, 'LP001230');
-INSERT INTO Home_Details VALUES (1157, '06065 Vincent Pines Johnburgh, WA 11007', 90.0, 'New', 240480, 3, 20, 'LP001270');
-INSERT INTO Home_Details VALUES (1158, '885 Brock Trail Williamston, UT 62571', 90.0, 'New', 323596, 2, 28, 'LP001208');
-INSERT INTO Home_Details VALUES (1159,'Unit 3885 Box 7739 DPO AP 55204',90.0,'New',84344,3,16,'LP001284');
-INSERT INTO Home_Details VALUES (1160,'USS Perez FPO AE 25873',95.0,'New',191756,2,49,'LP001031');
+
+INSERT INTO Home_Details VALUES (1111,'75752 Adams Island Suite 046
+North Kylefurt, MP 50842',40.0,'Old',436785,18,30,'LP001096');
+INSERT INTO Home_Details VALUES (1112,'198 Lisa Tunnel Apt. 182
+Emilychester, GU 66314',42.0,'New',342776,9,21,'LP001054');
+INSERT INTO Home_Details VALUES (1113,'406 Scott Port
+Kimberlyton, TN 37636',45.0,'New',332329,7,2,'LP001187');
+INSERT INTO Home_Details VALUES (1114,'7277 Richardson Crossroad Suite 008
+Heiditon, NV 39976',46.0,'New',90692,2,1,'LP001096');
+INSERT INTO Home_Details VALUES (1115,'179 Lori Streets Apt. 144
+Beckermouth, WV 47323',55.0,'Old',191193,18,10,'LP001083');
+INSERT INTO Home_Details VALUES (1116,'USCGC Castro
+FPO AE 63334',55.0,'Old',276800,13,38,'LP001054');
+INSERT INTO Home_Details VALUES (1117,'617 Miller Tunnel Apt. 087
+Michaelbury, NC 40183',60.0,'New',447475,5,30,'LP001203');
+INSERT INTO Home_Details VALUES (1118,'0648 Smith Drives
+New Manuelmouth, PW 63254',62.0,'Old',116388,11,35,'LP001128');
+INSERT INTO Home_Details VALUES (1119,'945 Mckinney Islands Suite 015
+Lake Matthew, GA 69018',64.0,'Old',176717,18,19,'LP001107');
+INSERT INTO Home_Details VALUES (1120,'78880 Maria Row
+Angelicaborough, FL 07013',65.0,'New',400814,4,19,'LP001082');
+INSERT INTO Home_Details VALUES (1121,'2792 Christopher Crescent
+Millerchester, ME 50898',65.0,'Old',323883,15,29,'LP001210');
+INSERT INTO Home_Details VALUES (1122,'532 Williams Mews
+South Brianna, LA 24518',65.0,'Old',452484,18,46,'LP001153');
+INSERT INTO Home_Details VALUES (1123,'0423 Kendra Hollow
+Port Williamfort, CA 93132',65.0,'Old',442984,16,12,'LP001105');
+INSERT INTO Home_Details VALUES (1124,'1010 Green Throughway Apt. 275
+North Karinashire, OR 06948',65.0,'Old',318296,18,42,'LP001015');
+INSERT INTO Home_Details VALUES (1125,'948 Wendy Island
+Danielborough, IN 92399',65.0,'Old',213795,18,19,'LP001220');
+INSERT INTO Home_Details VALUES (1126,'1849 Camacho Pike Apt. 371
+Alvareztown, CT 51535',65.0,'New',400501,2,47,'LP001298');
+INSERT INTO Home_Details VALUES (1127,'262 Brennan Trafficway Suite 231
+Nicoleborough, WV 41961',67.0,'New',195763,2,15,'LP001284');
+INSERT INTO Home_Details VALUES (1128,'0540 Peggy Harbor
+New Brendaburgh, GA 47499',68.0,'Old',433520,11,17,'LP001183');
+INSERT INTO Home_Details VALUES (1129,'743 Colton Row Apt. 334
+Lake Miguelfurt, AZ 57975',70.0,'Old',430470,11,26,'LP001149');
+INSERT INTO Home_Details VALUES (1130,'86147 Donald Prairie
+Keyton, ND 95750',70.0,'New',345552,7,44,'LP001135');
+INSERT INTO Home_Details VALUES (1131,'34110 Mclean Tunnel Suite 911
+West Mary, AR 66161',70.0,'Old',276581,14,17,'LP001174');
+INSERT INTO Home_Details VALUES (1132,'71563 Smith Views
+Alejandrabury, VI 05856',70.0,'New',383636,3,44,'LP001153');
+INSERT INTO Home_Details VALUES (1133,'4659 Preston Valleys Apt. 856
+Hudsonstad, MT 06301',70.0,'New',434206,4,9,'LP001051');
+INSERT INTO Home_Details VALUES (1134,'40899 Scott Brook
+Port Marie, VA 90541',70.0,'Old',460027,16,12,'LP001226');
+INSERT INTO Home_Details VALUES (1135,'47825 Cody Parkways
+Careyberg, AR 41342',70.0,'New',337693,1,15,'LP001096');
+INSERT INTO Home_Details VALUES (1136,'08219 Olson Fort
+Hollyville, FM 38043',73.0,'New',82138,9,6,'LP001056');
+INSERT INTO Home_Details VALUES (1137,'26775 Newton Ville Apt. 068
+Wagnerland, MH 01023',75.0,'Old',354186,11,15,'LP001187');
+INSERT INTO Home_Details VALUES (1138,'66479 Boone Wall Apt. 959
+Haasburgh, IA 13286',75.0,'New',454265,9,25,'LP001015');
+INSERT INTO Home_Details VALUES (1139,'8050 Carter Mills
+Berryhaven, NE 84874',75.0,'New',136247,9,47,'LP001169');
+INSERT INTO Home_Details VALUES (1140,'33625 Lisa Cape
+North Melindastad, MO 62522',75.0,'Old',494163,16,26,'LP001208');
+INSERT INTO Home_Details VALUES (1141,'PSC 1263, Box 7459
+APO AE 60660',75.0,'New',52036,6,23,'LP001082');
+INSERT INTO Home_Details VALUES (1142,'301 Elizabeth Groves Apt. 657
+South John, OH 67390',80.0,'New',111563,1,29,'LP001221');
+INSERT INTO Home_Details VALUES (1143,'60269 Brown Island
+Port Ashley, SD 33903',80.0,'Old',230586,14,5,'LP001067');
+INSERT INTO Home_Details VALUES (1144,'2196 Scott Manors
+Rodneyport, UT 25213',80.0,'Old',330811,16,7,'LP001163');
+INSERT INTO Home_Details VALUES (1145,'322 Rodriguez Viaduct
+Gouldborough, CO 12542',80.0,'New',335974,1,16,'LP001169');
+INSERT INTO Home_Details VALUES (1146,'8965 William Way
+South Scottview, MP 18714',80.0,'Old',242715,16,24,'LP001219');
+INSERT INTO Home_Details VALUES (1147,'8776 Mark Bypass
+Cruzview, AR 89256',80.0,'New',270008,8,11,'LP001210');
+INSERT INTO Home_Details VALUES (1148,'39429 Matthew Flats Suite 953
+Jessicaside, WI 84160',80.0,'New',277394,5,37,'LP001108');
+INSERT INTO Home_Details VALUES (1149,'33523 Richard Lodge
+New Aaronchester, WI 22767',82.0,'Old',408737,13,16,'LP001056');
+INSERT INTO Home_Details VALUES (1150,'110 Clark Burg Apt. 098
+Duncanberg, AR 63863',83.0,'New',57617,3,49,'LP001099');
+INSERT INTO Home_Details VALUES (1151,'45397 Wheeler Tunnel Apt. 907
+Jordanchester, VT 02350',84.0,'Old',108797,12,45,'LP001230');
+INSERT INTO Home_Details VALUES (1152,'730 Kevin Landing Apt. 008
+Harrishaven, HI 48429',85.0,'Old',149487,14,6,'LP001231');
+INSERT INTO Home_Details VALUES (1153,'72902 Hansen Ways Suite 277
+North Pamela, NH 52289',85.0,'Old',144155,14,8,'LP001270');
+INSERT INTO Home_Details VALUES (1154,'896 Sydney Prairie
+Coryborough, NV 26459',86.0,'New',383246,1,8,'LP001056');
+INSERT INTO Home_Details VALUES (1155,'3518 Padilla Dale Apt. 411
+East Karenshire, TX 38548',90.0,'Old',246008,11,36,'LP001231');
+INSERT INTO Home_Details VALUES (1156,'4290 Sandra Station Suite 531
+Annaburgh, WI 65467',90.0,'New',314753,6,5,'LP001051');
+INSERT INTO Home_Details VALUES (1157,'213 Bennett Drive
+North Wesley, CO 62491',90.0,'Old',230050,19,12,'LP001105');
+INSERT INTO Home_Details VALUES (1158,'PSC 9200, Box 8803
+APO AA 46951',90.0,'New',385954,8,36,'LP001149');
+INSERT INTO Home_Details VALUES (1159,'20260 Becker Plains Apt. 705
+West Cynthia, NC 69061',90.0,'New',104917,5,33,'LP001153');
+INSERT INTO Home_Details VALUES (1160,'324 David Tunnel
+New Kyleborough, VI 58893',95.0,'New',360952,2,28,'LP001174');
+
 commit;

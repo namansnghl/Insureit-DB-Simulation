@@ -4,7 +4,6 @@ from getpass import getpass
 import sys
 
 
-
 class Connection:
     database = "insurit"
     _host = None
@@ -46,6 +45,7 @@ class Connection:
 
     def connect(self):
         try:
+            print("Connecting to ", self._host)
             conn = rdb.connect(user=self.__username, password=self.__read_pass(),
                                host=self._host, port=self._port, database=self.database)
         except (Exception, Error) as msg:
@@ -54,3 +54,7 @@ class Connection:
             print("Connection established...\n")
             return conn
         return 0
+
+    @staticmethod
+    def disconnect(conn: rdb.connection):
+        conn.close()
