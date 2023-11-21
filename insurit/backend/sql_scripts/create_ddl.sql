@@ -1,6 +1,7 @@
 create database IF NOT EXISTS insurit;
 use insurit;
 
+--Added autoincrement here
 CREATE TABLE IF NOT EXISTS Customer (
   Customer_id integer PRIMARY KEY,
   Name varchar(255),
