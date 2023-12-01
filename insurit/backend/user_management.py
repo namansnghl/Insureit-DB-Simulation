@@ -1,11 +1,9 @@
 # create user() --This function takes the input from the user (Customer or Agent) and then calls the respective function.
-def userType(n):
+def userType(connection, n):
     if n == 1:
-        createCustomer()
-        print('\n')
+        createCustomer(connection)
     else:
-        createAgent()
-        print('\n')
+        createAgent(connection)
 
 
 # create Cust() -- This function is used to create a new customer.
