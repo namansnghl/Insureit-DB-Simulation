@@ -3,6 +3,7 @@ import shlex
 from .backend import authenticate as auth
 from .backend.db_manager import Connection
 from .parsers import CustomerParser, AgentParser, RootParser
+import run_commands
 
 connection = None
 
@@ -86,9 +87,7 @@ def loggedin(app: str, username: str, access: int) -> int:
             print("Logging you out...\n")
             return 0
 
-        args = parser.parse(user_input)
-
-        print(f"Running command: {user_input}")
+        run_commands.run(parser.parse(user_input), access, id=id, username=username, conn=connection)
 
     return 1
 
