@@ -71,7 +71,7 @@ def loggedin(app: str, username: str, access: int) -> int:
     global connection
     access_levels = [RootParser, AgentParser, CustomerParser]
     parser = access_levels[access]()
-
+    id = auth.id_from_username(connection, access, username)
 
     while True:
         user_input = input(f"{app} {username}> ")
