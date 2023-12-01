@@ -1,3 +1,8 @@
+USE `insurit`;
+DROP function IF EXISTS `CalculatePremium`;
+
+DELIMITER $$
+USE `insurit`$$
 CREATE DEFINER=`root`@`localhost` FUNCTION `CalculatePremium`(policy_id INT, age INT, sum_assured INT, tenure INT, policy_type VARCHAR(255)) RETURNS decimal(10,2)
     DETERMINISTIC
 BEGIN
@@ -21,4 +26,6 @@ BEGIN
         END;
 
     RETURN base_premium;
-END
+END$$
+
+DELIMITER ;

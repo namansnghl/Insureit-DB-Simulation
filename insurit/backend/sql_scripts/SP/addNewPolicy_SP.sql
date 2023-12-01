@@ -1,3 +1,8 @@
+USE `insurit`;
+DROP procedure IF EXISTS `AddNewPolicy`;
+
+DELIMITER $$
+USE `insurit`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AddNewPolicy`(
     IN policy_name VARCHAR(255),
     IN policy_type VARCHAR(255),
@@ -25,4 +30,6 @@ BEGIN
     EXECUTE stmt USING @p_name, @p_type, @p_desc, @p_active_flag, @p_sum_assured, @p_tenure, @p_table;
     DEALLOCATE PREPARE stmt;    
 
-END
+END$$
+
+DELIMITER ;
