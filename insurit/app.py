@@ -3,6 +3,7 @@ import shlex
 from .backend import authenticate as auth
 from .backend.db_manager import Connection
 from .parsers import CustomerParser, AgentParser, RootParser
+from .run_commands import *
 
 connection = None
 
@@ -85,10 +86,13 @@ def loggedin(app: str, username: str, access: int) -> int:
         if user_input.lower().strip() == 'logout':
             print("Logging you out...\n")
             return 0
-
-        args = parser.parse(user_input)
-
-        print(f"Running command: {user_input}")
+        arg = parser.parse(user_input)
+        if arg:
+            try:
+                run_command(arg, access_lvl=access, id=id, username=username, conn=connection)
+            except Exception as msg:
+                print("ERROR: ", str(msg))
+                print()
 
     return 1
 

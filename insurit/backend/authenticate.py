@@ -10,7 +10,6 @@ def login(cursor, username: str, password: str, login_level: int) -> int:
 
 def id_from_username(conn, access, uid):
 	SQL = "SELECT ID FROM INSURIT.SECRETS WHERE USERNAME = %s AND LVL = %s"
-	print(SQL)
 	cursor = conn.cursor()
 	cursor.execute(SQL, (uid, str(access)))
 	response = cursor.fetchone()

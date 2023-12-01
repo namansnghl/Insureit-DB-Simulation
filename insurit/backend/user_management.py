@@ -1,15 +1,10 @@
 # create user() --This function takes the input from the user (Customer or Agent) and then calls the respective function.
-def userType(n):
-    print('-----Please choose your type-----')
-    print('Type 1 for Agent')
-    print('Type 2 for Customer')
-    print('\n')
-    if n==1:
-        createCustomer()
-        print('\n')
+def userType(connection, n):
+    if n == 1:
+        createCustomer(connection)
     else:
-        createAgent()
-        print('\n')
+        createAgent(connection)
+
 
 # create Cust() -- This function is used to create a new customer.
 def createCustomer(connection):
@@ -22,10 +17,11 @@ def createCustomer(connection):
     Age = int(input("Enter customer age:"))
     query = """INSERT INTO 
     Customer (Name, Phone, Email, Address,Driving_license,Age) values (%s,%s,%s,%s,%s,%s)"""
-    vals = (Name,Phone,Email,Address,Driving_license,Age)
-    cursor.execute(query,vals)
+    vals = (Name, Phone, Email, Address, Driving_license, Age)
+    cursor.execute(query, vals)
     connection.commit()
     print('---Thanks for registering. Customer registration is successful.---')
+
 
 # create Agent() This function is used to create a new agent.
 def createAgent(connection):
@@ -37,6 +33,6 @@ def createAgent(connection):
     query = """INSERT INTO 
     Agents (Name, Email, Phone, Salary) values (%s,%s,%s,%s)"""
     vals = (Name, Email, Phone, Salary)
-    cursor.execute(query,vals)
+    cursor.execute(query, vals)
     connection.commit()
     print('---Thanks for registering. Agent registration is successful.---')
