@@ -18,27 +18,24 @@ def calculate_premium(connection):
         # Calling the MySQL stored function
         cursor.callproc('CalculatePremium', (policy_id, age, sum_assured, tenure, policy_type))
 
-        # Fetching the result from the stored function
         result = cursor.fetchone()
 
-        # Ensure the result is not None
         if result is not None:
             # The premium value is the first element in the result tuple
             premium_value = result[0]
             print(premium_value)
             return premium_value
         else:
-            # Handle the case where the result is None
             print("Error: Unable to retrieve premium value.")
             return None
 
     except mysql.connector.Error as err:
-        # Handle MySQL errors here
+       
         print(f"MySQL Error: {err}")
         return None
 
     finally:
-        # Close the cursor
+       
         if cursor:
             cursor.close()
 

@@ -69,7 +69,3 @@ def create_new_claim(connection):
     finally:
         # Close the cursor
         cursor.close()
-
-# # Example usage:
-# # Assuming you have a MySQL connection named 'conn'
-# create_new_claim(conn)
