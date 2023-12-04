@@ -3,6 +3,8 @@ from .backend.views import *
 from .backend.utils import *
 from .backend.finance import *
 from .backend.account_info import chsettings
+from .backend.forms import *
+
 
 def run_command(args, **kwargs):
     print(f"Running command: {args}")
@@ -34,7 +36,10 @@ def run_cust(args, **kwargs):
     elif args.client == 'buy':
         ...
     elif args.client == 'claim':
-        ...
+        if args.new:
+            create_new_claim(kwargs['conn'])
+        if args.view:
+            viewClaims(kwargs['conn'], kwargs['id'])
 
 
 def run_agent(args, **kwargs):

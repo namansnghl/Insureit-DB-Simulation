@@ -60,7 +60,7 @@ class CustomerParser(CustomParsers):
     def _claim(self):
         claim = self.subparser.add_parser('claim', help="Manage your claims or create new")
         claim.add_argument('--view', action='store_true', help="Show all claims")
-        claim.add_argument('--status', help="Check claim status")
+        # claim.add_argument('--status', help="Check claim status")
         claim.add_argument('-n', '--new', action='store_true', help="Start a new claim")
 
 
