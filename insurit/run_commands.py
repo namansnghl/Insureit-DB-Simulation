@@ -36,7 +36,7 @@ def run_cust(args, **kwargs):
 
     elif args.client == 'buy':
         ...
-    
+
     elif args.client == 'claim':
         if args.new:
             create_new_claim(kwargs['conn'])

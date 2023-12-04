@@ -1,5 +1,5 @@
-from finance import fetch_finance_details, make_payment
-from views import view_policy
+from .finance import fetch_finance_details, make_payment
+from .views import view_policy
 
 # Below function would take parameters such as policy_id, age, sum_assured, tenure and policy_type apart from connection
 # for the below params, take input directly when the agent is calling this function
@@ -67,8 +67,9 @@ def get_approved_claims(connection):
 
 def pay_policy(connection, id):
     listt = view_policy(connection, id)
-    holder_idx = int(input("Choose your policy (Enter index) - "))
-    print("Confirm Bank details:")
-    fetch_finance_details(connection, id)
-    input("Press Any button to continue")
-    make_payment(connection, listt[holder_idx][0], id, listt[holder_idx][1])
+    if listt:
+        holder_idx = int(input("Choose your policy (Enter index) - "))
+        print("Confirm Bank details:")
+        fetch_finance_details(connection, id)
+        input("Press Any button to continue")
+        make_payment(connection, listt[holder_idx][0], id, listt[holder_idx][1])
