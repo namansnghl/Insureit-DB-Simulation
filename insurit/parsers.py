@@ -48,9 +48,9 @@ class CustomerParser(CustomParsers):
 
     def _edit_acct(self):
         menu = self.subparser.add_parser('account-settings', help="Manage Account Settings and Information")
-        menu.add_argument('--ch-pass', help="Change your password")
-        menu.add_argument('--ch-usr', help="Change your username")
-        # TODO Add more options
+        menu.add_argument('--email', help="Change your Email ID", action="store_true")
+        menu.add_argument('--phone', help="Change your Phone Number", action="store_true")
+        menu.add_argument('--address', help="Change your Address", action="store_true")
 
     def _buy_new(self):
         buy = self.subparser.add_parser('buy', help="Purchase a new policy")
@@ -59,9 +59,9 @@ class CustomerParser(CustomParsers):
 
     def _claim(self):
         claim = self.subparser.add_parser('claim', help="Manage your claims or create new")
-        claim.add_argument('--view', help="Show all claims")
+        claim.add_argument('--view', action='store_true', help="Show all claims")
         claim.add_argument('--status', help="Check claim status")
-        claim.add_argument('-n', '--new', help="Start a new claim")
+        claim.add_argument('-n', '--new', action='store_true', help="Start a new claim")
 
 
 class AgentParser(CustomParsers):

@@ -1,9 +1,8 @@
 from .backend.user_management import userType
 from .backend.views import *
 from .backend.utils import *
-from datetime import datetime, timedelta
 from .backend.finance import *
-
+from .backend.account_info import chsettings
 
 def run_command(args, **kwargs):
     print(f"Running command: {args}")
@@ -17,7 +16,25 @@ def run_command(args, **kwargs):
 
 
 def run_cust(args, **kwargs):
-    ...
+    if args.client == 'pay':
+        ...
+    elif args.client == 'my-policies':
+        view_policy(kwargs['conn'], kwargs['id'])
+
+    elif args.client == 'account-settings':
+        if args.email:
+            chsettings(kwargs['conn'], kwargs['id'], option=1)
+        elif args.address:
+            chsettings(kwargs['conn'], kwargs['id'], option=3)
+        elif args.phone:
+            chsettings(kwargs['conn'], kwargs['id'], option=2)
+        else:
+            chsettings(kwargs['conn'], kwargs['id'])
+
+    elif args.client == 'buy':
+        ...
+    elif args.client == 'claim':
+        ...
 
 
 def run_agent(args, **kwargs):
