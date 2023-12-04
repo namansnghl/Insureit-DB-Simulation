@@ -4,6 +4,10 @@
 #The function below would take connection as a parameter and some other info 
 #from user and would call the addNewPolicy SP to create a new policy under either HomePolicy_detail or AutoPolicy_detail
 #Manager/admin input for the params below
+
+import mysql.connector
+from datetime import datetime, timedelta
+
 def add_new_policy(connection):
     try:
         cursor = connection.cursor()
