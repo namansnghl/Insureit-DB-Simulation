@@ -4,7 +4,7 @@ from .backend.utils import *
 from .backend.finance import *
 from .backend.account_info import chsettings
 from .backend.forms import *
-
+from .backend.analytics import *
 
 def run_command(args, **kwargs):
     print(f"Running command: {args}")
@@ -58,4 +58,11 @@ def run_agent(args, **kwargs):
 
 
 def run_admin(args, **kwargs):
-    ...
+    if args.root == 'agent':
+        if args.new:
+            userType(kwargs['conn'], kwargs['access_lvl'])
+        elif args.performance:
+            agentPerformance(connection=kwargs['conn'])
+
+    elif args.root == 'pending-claim':
+        pendingClaims(kwargs['conn'])

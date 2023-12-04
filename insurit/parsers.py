@@ -93,8 +93,12 @@ class RootParser(CustomParsers):
 
     def _create_parser(self):
         self._agent()
+        self._claims()
 
     def _agent(self):
         a = self.subparser.add_parser('agent', help='Manage agents')
         a.add_argument('-n', '--new', action='store_true', help="Register new agent")
-        a.add_argument("--show", action='store_true', help="Display all agents")
+        a.add_argument("--performance", action='store_true', help="Display all agents performance")
+
+    def _claims(self):
+        a = self.subparser.add_parser('pending-claim', help='Manage agents')
