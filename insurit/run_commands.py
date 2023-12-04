@@ -6,8 +6,8 @@ from .backend.account_info import chsettings
 from .backend.forms import *
 from .backend.analytics import *
 
+
 def run_command(args, **kwargs):
-    print(f"Running command: {args}")
     access_lvl = kwargs['access_lvl']
     if access_lvl == 1:
         run_agent(args, **kwargs)

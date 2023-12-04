@@ -9,13 +9,13 @@ def view_policy(connection, customer_id):
         print('Oops! No policies found for this user.')
     else:
         i = 0
+        print(f"These are the policies you own. id {customer_id}")
         for policy in policies:
             i += 1
-            print(f"These are the policies you own. id {customer_id}")
-            if not policy[2]:
+            if policy[2]:
                 print(f"{i}. Home {policy[2]} {policy[4]}")
                 list_pol[i] = [policy[2], 'Home']
-            elif not policy[3]:
+            elif policy[3]:
                 print(f"{i}. Auto {policy[3]} {policy[5]}")
                 list_pol[i] = [policy[3], 'Auto']
     cursor.close()
