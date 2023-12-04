@@ -44,13 +44,18 @@ def viewClaims(connection, customer_id):
 
 
 # show_dues() #SP NAMAN
-def pendingClaims(connection, customer_id):
+def pendingClaims(connection):
     cursor = connection.cursor()
-    view = f"SELECT * FROM PENDING_CLAIMS WHERE Customer_id = {customer_id}"
-    cursor.execute(view)
+    sql = f"SELECT CLAIM_ID, CLAIM_AMOUNT, POLICY_STATUS, PAST_REJECTS FROM INSURIT.PENDING_CLAIMS ORDER BY CLAIM_DT ASC;"
+    cursor.execute(sql)
     result = cursor.fetchall()
-    for res in result:
-        print(res)
+    print()
+    print("{: <15} | {: <15} | {: <15} | {: <15}".format("CLAIM ID", "AMOUNT", "POLICY STATUS", "PAST REJECTS"))
+    print("{:-<15}|{:-<15}|{:-<15}|{:-<15}".format("", "", "", ""))
+    for row in result:
+        print("{: <15} | {: <15} | {: <15} | {: <15}".format(row[0], row[1], row[2], row[3]))
+    cursor.close()
+    print()
 
 
 # show_customers() -- This is for agents and admin to show the customers.
