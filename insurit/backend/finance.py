@@ -1,5 +1,5 @@
-# fetch_finance() #Fetch the finance details of the customer with c_id
-# make_payment(policy_number, username) #Transcations table mai entry, and jo bhi policy number, uske corresponding mai Due date change (Policy_Holder)
+# fetch_finance() #Fetch the finance details of the customer with c_id make_payment(policy_number, username)
+# Transcations table mai entry, and jo bhi policy number, uske corresponding mai Due date change (Policy_Holder)
 
 # check_dues() # With username, map the customer_id and check Policies which are due
 
@@ -16,13 +16,9 @@ def fetch_finance_details(connection, customer_id):
 
         if customer_details:
             # Printing the customer details
-            print("Customer Details:")
             print(f"Customer ID: {customer_details[1]}")
-            print(f"SSN: {customer_details[0]}")
             print(f"Account Number: {customer_details[2]}")
-            print(f"Income: {customer_details[3]}")
             print(f"Bank Name: {customer_details[4]}")
-            print(f"Credit History: {customer_details[5]}")
         else:
             print(f"No customer found with Customer ID {customer_id}")
 
@@ -98,11 +94,10 @@ def get_policy_holder_id(connection, customer_id, policy_type):
     finally:
         cursor.close()
 
-def make_payment(connection, policy_id, customer_id):
+def make_payment(connection, policy_id, customer_id, policy_type):
     try:
         cursor = connection.cursor()
         amount = int(input("Enter the amount: "))
-        policy_type = input("Enter Policy Type: Auto or Home: ")
 
         # Get the current date
         current_date = datetime.now().date()

@@ -4,6 +4,7 @@ def view_policy(connection, customer_id):
     view = f"SELECT * FROM view_my_policy WHERE Customer_id = {customer_id}"
     cursor.execute(view)
     policies = cursor.fetchall()
+    list_pol = {}
     if not policies:
         print('Oops! No policies found for this user.')
     else:
@@ -13,9 +14,12 @@ def view_policy(connection, customer_id):
             print(f"These are the policies you own. id {customer_id}")
             if not policy[2]:
                 print(f"{i}. Home {policy[2]} {policy[4]}")
-            if not policy[3]:
+                list_pol[i] = [policy[2], 'Home']
+            elif not policy[3]:
                 print(f"{i}. Auto {policy[3]} {policy[5]}")
+                list_pol[i] = [policy[3], 'Auto']
     cursor.close()
+    return list_pol
 
 
 # view_claims()

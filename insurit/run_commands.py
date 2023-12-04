@@ -19,7 +19,8 @@ def run_command(args, **kwargs):
 
 def run_cust(args, **kwargs):
     if args.client == 'pay':
-        ...
+        pay_policy(kwargs['conn'], kwargs['id'])
+
     elif args.client == 'my-policies':
         view_policy(kwargs['conn'], kwargs['id'])
 
@@ -35,6 +36,7 @@ def run_cust(args, **kwargs):
 
     elif args.client == 'buy':
         ...
+    
     elif args.client == 'claim':
         if args.new:
             create_new_claim(kwargs['conn'])

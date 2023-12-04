@@ -1,10 +1,8 @@
-# calc_premium() SP KARAN
-# claim approvals()
-#Not importing any library as it will be directly done in main.py
+from finance import fetch_finance_details, make_payment
+from views import view_policy
 
-
-#Below function would take parameters such as policy_id, age, sum_assured, tenure and policy_type apart from connection
-#for the below params, take input directly when the agent is calling this function
+# Below function would take parameters such as policy_id, age, sum_assured, tenure and policy_type apart from connection
+# for the below params, take input directly when the agent is calling this function
 def calculate_premium(connection):
     try:
         cursor = connection.cursor()
@@ -30,17 +28,17 @@ def calculate_premium(connection):
             return None
 
     except mysql.connector.Error as err:
-       
+
         print(f"MySQL Error: {err}")
         return None
 
     finally:
-       
+
         if cursor:
             cursor.close()
 
 
-#Claim_approvals would return a dataframe with all the approvals only 
+# Claim_approvals would return a dataframe with all the approvals only
 def get_approved_claims(connection):
     try:
         cursor = connection.cursor(dictionary=True)
@@ -67,3 +65,10 @@ def get_approved_claims(connection):
             cursor.close()
 
 
+def pay_policy(connection, id):
+    listt = view_policy(connection, id)
+    holder_idx = int(input("Choose your policy (Enter index) - "))
+    print("Confirm Bank details:")
+    fetch_finance_details(connection, id)
+    input("Press Any button to continue")
+    make_payment(connection, listt[holder_idx][0], id, listt[holder_idx][1])
