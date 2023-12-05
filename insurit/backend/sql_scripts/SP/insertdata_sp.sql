@@ -1,6 +1,7 @@
 DELIMITER //
 CREATE PROCEDURE insertdata()
 BEGIN
+delete from secrets;
 delete from report;
 delete from claim;
 delete from transactions;
