@@ -35,9 +35,6 @@ def run_cust(args, **kwargs):
         else:
             chsettings(kwargs['conn'], kwargs['id'])
 
-    elif args.client == 'buy':
-        ...
-
     elif args.client == 'claim':
         if args.new:
             create_new_claim(kwargs['conn'])
@@ -52,6 +49,8 @@ def run_agent(args, **kwargs):
         if args.show:
             showCustomers(kwargs['conn'], kwargs['id'])
     elif args.agent == 'policy':
+        if args.add_new:
+            add_new_policy(kwargs['conn'])
         if args.calc_premium:
             calculate_premium(kwargs['conn'])
         if args.at_risk:
