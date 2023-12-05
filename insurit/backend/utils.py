@@ -1,9 +1,12 @@
+#utils.py
 from .finance import fetch_finance_details, make_payment
 from .views import view_policy
-import mysql.connector
 
+import mysql.connector
+from datetime import datetime, timedelta
 # Below function would take parameters such as policy_id, age, sum_assured, tenure and policy_type apart from connection
 # for the below params, take input directly when the agent is calling this function
+
 def calculate_premium(connection):
     try:
         cursor = connection.cursor()

@@ -1,12 +1,6 @@
-# create claims
-# create policy KARAN
-
-#The function below would take connection as a parameter and some other info 
-#from user and would call the addNewPolicy SP to create a new policy under either HomePolicy_detail or AutoPolicy_detail
-#Manager/admin input for the params below
-
 import mysql.connector
 from datetime import datetime, timedelta
+from .views import view_policy
 
 def add_new_policy(connection):
     try:
@@ -47,29 +41,40 @@ def add_new_policy(connection):
 
 
 
-#Please import the below library in the main file 
-#import datetime from date
 
-def create_new_claim(connection):
+def create_new_claim(connection, customer_id):
     try:
         # Get input from the user
         claim_amount = int(input("Enter claim amount: "))
-        holder_id = int(input("Enter holder ID: "))
+        listt = view_policy(connection, customer_id)
+        
+        if listt:
+            holder_idx = int(input("Choose your policy (Enter index) - "))
+            auto_present = any('Auto' in value for value in listt.values())
+            home_present = any('Home' in value for value in listt.values())
 
-        cursor = connection.cursor()
+            if auto_present:
+                holder_id_query = f"SELECT Holder_id FROM Policy_Holder WHERE Auto_Policy_id = {listt[holder_idx][0]}"
+            elif home_present:
+                holder_id_query = f"SELECT Holder_id FROM Policy_Holder WHERE Home_Policy_id = {listt[holder_idx][0]}"
 
-        # Call the stored procedure
-        #Note that the claim date for newly created row would be for currrent date only
-        cursor.callproc('CreateNewClaim', (claim_amount, date.today(), holder_id))
+            with connection.cursor() as cursor:
+                cursor.execute(holder_id_query)
+                holder_id = cursor.fetchone()[0]
 
-        # Commit the changes
-        connection.commit()
+            with connection.cursor() as cursor:
+                # Call the stored procedure
+                cursor.callproc('CreateNewClaim', (claim_amount, date.today(), holder_id))
 
-        print("New claim created successfully!")
+            # Commit the changes
+            connection.commit()
 
-    except mysql.connector.Error as err:
+            print("New claim created successfully!")
+
+    except (mysql.connector.Error, ValueError) as err:
         print(f"Error: {err}")
 
     finally:
         # Close the cursor
-        cursor.close()
+        if cursor:
+            cursor.close()    
