@@ -1,8 +1,11 @@
+
 # fetch_finance() #Fetch the finance details of the customer with c_id make_payment(policy_number, username)
 # Transcations table mai entry, and jo bhi policy number, uske corresponding mai Due date change (Policy_Holder)
 
 # check_dues() # With username, map the customer_id and check Policies which are due
 
+import mysql.connector
+from datetime import datetime, timedelta
 
 def fetch_finance_details(connection, customer_id):
     try:
@@ -63,9 +66,9 @@ def check_due_dates(connection):
         else:
             print("No policies with due dates within the next 7 days.")
 
-    except sqlite3.Error as e:
+    except mysql.connector.Error as e:
         print(f"Error: {e}")
-
+        
     finally:
         # Closing the cursor
         cursor.close()
