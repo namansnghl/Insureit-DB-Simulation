@@ -56,12 +56,14 @@ def agentPerformance(connection):
     sns.barplot(x='Agent Name', y='Number of Customers', data=agent_df, label='Number of Customers', color='blue', ax=axes[0])
     axes[0].set_title('Number of Customers by Agent')
     axes[0].tick_params(axis='x', rotation=45)
+    axes[0].set_xticklabels(agent_df['Agent Name'], rotation=45)
     axes[0].legend()
 
     # Bar Chart for Number of Policies sold
     sns.barplot(x='Agent Name', y='Number of Policies sold', data=agent_df, label='Number of Policies sold', color='orange', ax=axes[1])
     axes[1].set_title('Number of Policies sold by Agent')
     axes[1].tick_params(axis='x', rotation=45)
+    axes[1].set_xticklabels(agent_df['Agent Name'], rotation=45)
     axes[1].legend()
 
     # Pie Chart for Total Sales

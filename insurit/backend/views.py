@@ -1,3 +1,5 @@
+import pandas as pd
+
 # View 1. view_policy() for customers
 def view_policy(connection, customer_id):
     cursor = connection.cursor()
@@ -65,9 +67,7 @@ def showCustomers(connection, agent_id):
     cursor.execute(view)
     result = cursor.fetchone()[0]
     rows = [row.split(',') for row in result.split(';') if row]
-    columns = ['Customer_ID', 'Name', 'Phone', 'Email', 'Address', 'Driving_License',
-               'Home_Policy_ID', 'Auto_Policy_ID', 'Policy_Status', 'Start_Date', 'Expiry_Date', 'Renew_Date',
-               'At_Risk_Flag']
+    columns = ['Customer_ID', 'Name','Home_Policy_ID', 'Auto_Policy_ID']
 
     df = pd.DataFrame(rows, columns=columns)
     print(df)

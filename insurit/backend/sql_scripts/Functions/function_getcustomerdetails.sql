@@ -10,14 +10,13 @@ BEGIN
     -- ...
 
     SELECT
-        GROUP_CONCAT(CONCAT(c.Customer_id, ',', c.Name, ',', c.Phone, ',', c.Email, ',', c.Address, ',', c.Driving_License, ',',
-        ph.Home_Policy_id, ',', ph.Auto_Policy_id, ',',ph.status_of_policy , ',',ph.StartDate,',',ph.ExpiryDate, ',', ph.RenewDate, ',', ph.at_risk_flag) SEPARATOR ';')
+        GROUP_CONCAT(CONCAT(c.Customer_id, ',', c.Name, ',', COALESCE(ph.Home_Policy_id, ''), ',', COALESCE(ph.Auto_Policy_id, '')) SEPARATOR ';')
     INTO
         result
     FROM
-        Customer c
-    INNER JOIN
-        Policy_Holder ph ON c.Customer_id = ph.Customer_id
+        Policy_Holder ph
+    LEFT JOIN
+        customer c ON c.Customer_id = ph.Customer_id
     WHERE
         ph.Agent_id = agentID;
 
