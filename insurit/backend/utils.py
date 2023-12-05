@@ -48,7 +48,7 @@ def get_approved_claims(connection):
         cursor = connection.cursor(dictionary=True)
 
         # SQL query to select all data for approved claims
-        query = "SELECT * FROM claim_table WHERE claim_status = 'A'"
+        query = "SELECT * FROM CLAIM WHERE claim_status = 'A'"
 
         # Execute the query
         cursor.execute(query)
