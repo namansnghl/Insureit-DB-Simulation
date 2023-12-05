@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS Home_Details(
 );
 
 CREATE TABLE IF NOT EXISTS Transactions(
-  Transaction_id varchar(255) PRIMARY KEY,
+  Transaction_id varchar(255) AUTO_INCREMENT PRIMARY KEY,
   Date date,
   status_of_transaction varchar(255),
   Amount integer,
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS Transactions(
 );
 
 CREATE TABLE IF NOT EXISTS Claim(
-  Claim_id integer PRIMARY KEY,
+  Claim_id integer AUTO_INCREMENT PRIMARY KEY,
   Claim_amount integer,
   Date date,
   Holder_id integer,
