@@ -49,6 +49,8 @@ def run_agent(args, **kwargs):
         if args.show:
             showCustomers(kwargs['conn'], kwargs['id'])
     elif args.agent == 'policy':
+        if args.add_new:
+            add_new_policy(kwargs['conn'])
         if args.calc_premium:
             calculate_premium(kwargs['conn'])
         if args.at_risk:

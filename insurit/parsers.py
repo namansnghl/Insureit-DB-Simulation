@@ -81,6 +81,7 @@ class AgentParser(CustomParsers):
 
     def _policy(self):
         pol = self.subparser.add_parser('policy', help="Perform policy related Operations")
+        pol.add_argument('--add-new', action='store_true', help="Add new Policy to Insurit")
         pol.add_argument('--at-risk', action='store_true', help="Show clients with policy terms at risk")
         pol.add_argument('--calc-premium', action='store_true', help="Calculate policy premium for a potential client")
 
