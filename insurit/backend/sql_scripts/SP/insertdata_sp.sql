@@ -1,6 +1,20 @@
 DELIMITER //
 CREATE PROCEDURE insertdata()
 BEGIN
+delete from report;
+delete from claim;
+delete from transactions;
+delete from vehicle_details;
+delete from home_details;
+delete from policy_holder;
+delete from loan;
+delete from finance_details;
+delete from report_details;
+delete from autopolicy_detail;
+delete from homepolicy_detail;
+delete from agents;
+delete from customer;
+
 INSERT INTO Customer VALUES (58082,'Alfred Balshen','140-400-3125','abalshen10@bloglines.com','0 Glendale Parkway','Yes',58);
 INSERT INTO Customer VALUES (74341,'Cello Fassan','467-460-7623','cfassan1c@google.com.br','70873 Ludington Court','No',66);
 INSERT INTO Customer VALUES (77471,'Guthrie Cortese','770-414-1691','gcortesep@about.com','0077 Sheridan Drive','No',65);
