@@ -35,9 +35,6 @@ def run_cust(args, **kwargs):
         else:
             chsettings(kwargs['conn'], kwargs['id'])
 
-    elif args.client == 'buy':
-        ...
-
     elif args.client == 'claim':
         if args.new:
             create_new_claim(kwargs['conn'])
