@@ -5,6 +5,7 @@ from .backend.finance import *
 from .backend.account_info import chsettings
 from .backend.forms import *
 from .backend.analytics import *
+from .backend.insertdata import insertdata
 
 
 def run_command(args, **kwargs):
@@ -69,3 +70,7 @@ def run_admin(args, **kwargs):
             pendingClaims(kwargs['conn'])
         elif args.approved:
             get_approved_claims(kwargs['conn'])
+
+    elif args.root == "database":
+        if args.reset:
+            insertdata(kwargs['conn'])
