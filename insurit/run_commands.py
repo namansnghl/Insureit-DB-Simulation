@@ -64,5 +64,8 @@ def run_admin(args, **kwargs):
         elif args.performance:
             agentPerformance(connection=kwargs['conn'])
 
-    elif args.root == 'pending-claim':
-        pendingClaims(kwargs['conn'])
+    elif args.root == 'claims':
+        if args.pending:
+            pendingClaims(kwargs['conn'])
+        elif args.approved:
+            get_approved_claims(kwargs['conn'])

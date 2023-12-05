@@ -101,4 +101,6 @@ class RootParser(CustomParsers):
         a.add_argument("--performance", action='store_true', help="Display all agents performance")
 
     def _claims(self):
-        a = self.subparser.add_parser('pending-claim', help='Manage agents')
+        a = self.subparser.add_parser('claims', help='Manage claims')
+        a.add_argument('-p', '--pending', action='store_true', help="Show pending claims")
+        a.add_argument('-a', '--approved', action='store_true', help="show approved claims")
