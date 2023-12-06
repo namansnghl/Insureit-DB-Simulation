@@ -13,14 +13,14 @@ def createCustomer(connection):
     Phone = input("Enter customer phone (without country code):")
     Email = input("Enter customer email:")
     Address = input("Enter customer Address:")
-    Driving_license = input("Please type Yes if customer has a Driving license, otherwise No.")
+    Driving_license = input("Please type Yes if customer has a Driving license, otherwise No - ")
     Age = int(input("Enter customer age:"))
     query = """INSERT INTO 
     Customer (Name, Phone, Email, Address,Driving_license,Age) values (%s,%s,%s,%s,%s,%s)"""
     vals = (Name, Phone, Email, Address, Driving_license, Age)
     cursor.execute(query, vals)
     connection.commit()
-    print('---Thanks for registering. Customer registration is successful.---')
+    print('Customer registration is successful\nDefault username is first name and password is full name\n')
 
 
 # create Agent() This function is used to create a new agent.
