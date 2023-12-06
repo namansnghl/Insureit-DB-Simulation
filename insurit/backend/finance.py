@@ -38,31 +38,26 @@ def fetch_finance_details(connection, customer_id):
 def check_due_dates(connection):
     try:
         cursor = connection.cursor()
+        seven_days_from_now = datetime.now().date() + timedelta(days=7)
+        seven_days_from_now_str = seven_days_from_now.strftime("%m-%d-%Y")
 
-        current_date = datetime.now().date()
-        seven_days_from_now = current_date + timedelta(days=7)
-
-        query = f"SELECT * FROM Policy_Holder WHERE ExpiryDate BETWEEN '{current_date}' AND '{seven_days_from_now}'"
+        query = f"""SELECT C.NAME, C.EMAIL, HOME_POLICY_ID, Auto_Policy_id FROM INSURIT.Policy_Holder PH
+LEFT JOIN INSURIT.CUSTOMER C ON PH.CUSTOMER_ID = C.CUSTOMER_ID 
+WHERE (HOME_POLICY_ID is not Null OR AUTO_POLICY_ID is not null)
+AND PH.RENEWDATE BETWEEN CURDATE() AND STR_TO_DATE('{seven_days_from_now_str}','%m-%d-%Y');"""
 
         cursor.execute(query)
 
         due_policies = cursor.fetchall()
 
         if due_policies:
-            print("Policy Holders with Due Dates within the Next 7 Days:")
+            print("Below customers have Due Dates within the Next 7 Days:")
             for policy in due_policies:
-                print(f"Holder ID: {policy[0]}")
-                print(f"Customer ID: {policy[1]}")
-                print(f"Home Policy ID: {policy[2]}")
-                print(f"Auto Policy ID: {policy[3]}")
-                print(f"Status of Policy: {policy[4]}")
-                print(f"Start Date: {policy[5]}")
-                print(f"Expiry Date: {policy[6]}")
-                print(f"Renew Date: {policy[7]}")
-                print(f"At Risk Flag: {policy[8]}")
-                print(f"Agent ID: {policy[9]}")
-                print("-----")
-
+                if policy[-1] is None:
+                    print(f"{policy[0]}, {policy[1]}, HOME_POLICY - {policy[2]}")
+                else:
+                    print(f"{policy[0]}, {policy[1]}, AUTO_POLICY - {policy[2]}")
+            print()
         else:
             print("No policies with due dates within the next 7 days.")
 
