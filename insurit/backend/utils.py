@@ -18,8 +18,8 @@ def calculate_premium(connection):
         tenure = int(input("Enter the tenure period: "))
         policy_type = input("Enter Policy type: HomePolicy or AutoPolicy: ")
 
-        # Calling the MySQL stored function
-        cursor.callproc('CalculatePremium', (policy_id, age, sum_assured, tenure, policy_type))
+        # Calling the MySQL stored function using a SELECT statement
+        cursor.execute('SELECT CalculatePremium(%s, %s, %s, %s, %s) AS premium', (policy_id, age, sum_assured, tenure, policy_type))
 
         result = cursor.fetchone()
 
@@ -33,12 +33,10 @@ def calculate_premium(connection):
             return None
 
     except mysql.connector.Error as err:
-
         print(f"MySQL Error: {err}")
         return None
 
     finally:
-
         if cursor:
             cursor.close()
 
