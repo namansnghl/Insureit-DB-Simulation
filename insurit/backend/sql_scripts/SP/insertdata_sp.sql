@@ -16,6 +16,9 @@ delete from homepolicy_detail;
 delete from agents;
 delete from customer;
 
+INSERT INTO INSURIT.SECRETS (id, USERNAME, SECRET, LVL)
+VALUES (0, 'root', SHA2(LOWER('root'), 256), 0);
+
 INSERT INTO Customer VALUES (58082,'Alfred Balshen','140-400-3125','abalshen10@bloglines.com','0 Glendale Parkway','Yes',58);
 INSERT INTO Customer VALUES (74341,'Cello Fassan','467-460-7623','cfassan1c@google.com.br','70873 Ludington Court','No',66);
 INSERT INTO Customer VALUES (77471,'Guthrie Cortese','770-414-1691','gcortesep@about.com','0077 Sheridan Drive','No',65);
