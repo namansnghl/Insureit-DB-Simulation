@@ -33,7 +33,7 @@ class CustomerParser(CustomParsers):
         self._premium_pay()
         self._policy_view()
         self._edit_acct()
-        self._buy_new()
+        # self._buy_new()
         self._claim()
 
     def _premium_pay(self):
@@ -52,10 +52,10 @@ class CustomerParser(CustomParsers):
         menu.add_argument('--phone', help="Change your Phone Number", action="store_true")
         menu.add_argument('--address', help="Change your Address", action="store_true")
 
-    def _buy_new(self):
-        buy = self.subparser.add_parser('buy', help="Purchase a new policy")
-        buy.add_argument('--show-auto', help="Show only Auto Policies offered", default=False, action="store_true")
-        buy.add_argument('--show-home', help="Show only Home Policies offered", default=False, action="store_true")
+    # def _buy_new(self):
+    #     buy = self.subparser.add_parser('buy', help="Purchase a new policy")
+    #     buy.add_argument('--show-auto', help="Show only Auto Policies offered", default=False, action="store_true")
+    #     buy.add_argument('--show-home', help="Show only Home Policies offered", default=False, action="store_true")
 
     def _claim(self):
         claim = self.subparser.add_parser('claim', help="Manage your claims or create new")
@@ -81,6 +81,7 @@ class AgentParser(CustomParsers):
 
     def _policy(self):
         pol = self.subparser.add_parser('policy', help="Perform policy related Operations")
+        pol.add_argument('--add-new', action='store_true', help="Add new Policy to Insurit")
         pol.add_argument('--at-risk', action='store_true', help="Show clients with policy terms at risk")
         pol.add_argument('--calc-premium', action='store_true', help="Calculate policy premium for a potential client")
 

@@ -4,6 +4,7 @@ from .views import view_policy
 
 import mysql.connector
 from datetime import datetime, timedelta
+import pandas as pd
 # Below function would take parameters such as policy_id, age, sum_assured, tenure and policy_type apart from connection
 # for the below params, take input directly when the agent is calling this function
 
@@ -48,7 +49,7 @@ def get_approved_claims(connection):
         cursor = connection.cursor(dictionary=True)
 
         # SQL query to select all data for approved claims
-        query = "SELECT * FROM claim_table WHERE claim_status = 'A'"
+        query = "SELECT * FROM CLAIM WHERE claim_status = 'A'"
 
         # Execute the query
         cursor.execute(query)
@@ -56,7 +57,12 @@ def get_approved_claims(connection):
         # Fetch all rows
         approved_claims = cursor.fetchall()
 
-        return approved_claims
+        claims_df = pd.DataFrame(approved_claims)
+
+        print(claims_df)
+
+        return claims_df
+
 
     except mysql.connector.Error as err:
         # Handle MySQL errors here

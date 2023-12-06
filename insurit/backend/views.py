@@ -53,7 +53,7 @@ def pendingClaims(connection):
     result = cursor.fetchall()
     print()
     print("{: <15} | {: <15} | {: <15} | {: <15}".format("CLAIM ID", "AMOUNT", "POLICY STATUS", "PAST REJECTS"))
-    print("{:-<15}|{:-<15}|{:-<15}|{:-<15}".format("", "", "", ""))
+    print("{:-<15}-|-{:-<15}-|-{:-<15}-|-{:-<15}".format("", "", "", ""))
     for row in result:
         print("{: <15} | {: <15} | {: <15} | {: <15}".format(row[0], row[1], row[2], row[3]))
     cursor.close()
