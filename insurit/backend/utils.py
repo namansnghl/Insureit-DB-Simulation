@@ -81,5 +81,5 @@ def pay_policy(connection, id):
         holder_idx = int(input("Choose your policy (Enter index) - "))
         print("Confirm Bank details:")
         fetch_finance_details(connection, id)
-        input("Press Any button to continue")
+        input("Press Enter to continue")
         make_payment(connection, listt[holder_idx][0], id, listt[holder_idx][1])

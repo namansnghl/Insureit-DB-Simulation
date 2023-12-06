@@ -76,7 +76,7 @@ def check_due_dates(connection):
 
 
 #For the make_payment method, another method has to be defined which will extractd details needed in make_payment method
-def get_policy_holder_id(connection, customer_id, policy_type):
+def get_policy_holder_id(connection, customer_id, policy_type, policy_id):
     try:
         cursor = connection.cursor()
 
@@ -106,7 +106,7 @@ def make_payment(connection, policy_id, customer_id, policy_type):
         current_date = datetime.now().date()
 
         # Get Holder_id based on Customer_id and Policy_Type
-        holder_id = get_policy_holder_id(connection, customer_id, policy_type)
+        holder_id = get_policy_holder_id(connection, customer_id, policy_type, policy_id)
 
         if holder_id is not None:
             # Update RenewDate in Policy_Holder table
