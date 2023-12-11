@@ -51,12 +51,6 @@ CREATE TABLE HomePolicy_detail (
 );
 
 
-CREATE TABLE IF NOT EXISTS Report_Details (
-  Report_id integer PRIMARY KEY,
-  Date date,
-  Damage_amount integer
-);
-
 CREATE TABLE IF NOT EXISTS Finance_details (
   SSN integer,
   Customer_id integer PRIMARY KEY,
@@ -153,6 +147,13 @@ CREATE TABLE IF NOT EXISTS Report(
     FOREIGN KEY(Asset_id_vehicle) REFERENCES Vehicle_Details(Asset_id),
     FOREIGN KEY(Asset_id_home) REFERENCES Home_Details(Asset_id),
     FOREIGN KEY (Claim_id) references Claim(Claim_id)
+);
+
+CREATE TABLE IF NOT EXISTS Report_Details (
+  Report_id integer PRIMARY KEY,
+  Date date,
+  Damage_amount integer,
+  FOREIGN KEY (Report_id) REFERENCES Report(Report_id)
 );
 
 commit;
