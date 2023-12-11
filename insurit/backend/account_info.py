@@ -1,10 +1,7 @@
-# Account_menu()
-# ++ one function for each menu item
-
 import os
 
 
-# function to update the email of the customer
+# Function to update the email of the customer
 def updateEmail(connection, customer_id):
     cursor = connection.cursor()
     email = input('Enter your new Email:')
@@ -14,7 +11,7 @@ def updateEmail(connection, customer_id):
     print('Email has been updated successfully!')
 
 
-# function to update the phone number of the customer
+# Function to update the phone number of the customer
 def updatePhone(connection, customer_id):
     cursor = connection.cursor()
     phone = input('Enter your new Phone Number:')
@@ -24,7 +21,7 @@ def updatePhone(connection, customer_id):
     print('Phone Number has been updated successfully!')
 
 
-# function to update the addresss of the customer
+# Function to update the addresss of the customer
 def updateAddress(connection, customer_id):
     cursor = connection.cursor()
     address = input('Enter your new Address:')
@@ -33,7 +30,7 @@ def updateAddress(connection, customer_id):
     connection.commit()
     print('Address has been updated successfully!')
 
-
+# Function to display the menu
 def menu():
     print('WARNING: Changing account settings')
     print('1. Update Email')
@@ -42,10 +39,13 @@ def menu():
     print('4. Cancel')
     return int(input('Your choice: '))
 
-
+# Function to handle user input and call the appropriate update function
 def chsettings(connection, customer_id, option=None):
+    # If the option is not provided, display the menu
     if not option:
         option = menu()
+
+    # Perform the chosen action based on the user's input
     if option == 1:
         updateEmail(connection, customer_id)
     elif option == 2:
@@ -53,6 +53,7 @@ def chsettings(connection, customer_id, option=None):
     elif option == 3:
         updateAddress(connection, customer_id)
     elif option == 4:
-        return 0
+        return 0 # User chose to cancel, return 0
     else:
+        # If an invalid option is selected, recursively call the function with the same parameters
         chsettings(connection, customer_id, option)
