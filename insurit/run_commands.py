@@ -19,6 +19,12 @@ def run_command(args, **kwargs):
 
 
 def run_cust(args, **kwargs):
+    """
+    Function Runs all the customer commands as per the arguments passed to I/O
+    :param args: Arguments/User command
+    :param kwargs:
+    :return: None
+    """
     if args.client == 'pay':
         pay_policy(kwargs['conn'], kwargs['id'])
 
@@ -43,6 +49,12 @@ def run_cust(args, **kwargs):
 
 
 def run_agent(args, **kwargs):
+    """
+    Function Runs all the Agent commands as per the arguments passed to I/O
+    :param args: Arguments/User command
+    :param kwargs:
+    :return: None
+    """
     if args.agent == 'client':
         if args.new:
             userType(kwargs['conn'], kwargs['access_lvl'])
@@ -58,6 +70,12 @@ def run_agent(args, **kwargs):
 
 
 def run_admin(args, **kwargs):
+    """
+    Function Runs all the admin commands as per the arguments passed to I/O
+    :param args: Arguments/User command
+    :param kwargs:
+    :return: None
+    """
     if args.root == 'agent':
         if args.new:
             userType(kwargs['conn'], kwargs['access_lvl'])
