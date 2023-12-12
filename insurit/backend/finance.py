@@ -1,17 +1,13 @@
-
-# fetch_finance() #Fetch the finance details of the customer with c_id make_payment(policy_number, username)
-# Transcations table mai entry, and jo bhi policy number, uske corresponding mai Due date change (Policy_Holder)
-
-# check_dues() # With username, map the customer_id and check Policies which are due
-
+#importing libraries
 import mysql.connector
 from datetime import datetime, timedelta
 
+#function fetch finance details of a user based on Customer_id
 def fetch_finance_details(connection, customer_id):
     try:
         # Creating a cursor object
         cursor = connection.cursor()
-
+        #SQL statement 
         query = f"SELECT * FROM Finance_details WHERE Customer_id = {customer_id}"
 
         cursor.execute(query)
@@ -24,12 +20,13 @@ def fetch_finance_details(connection, customer_id):
             print(f"Bank Name: {customer_details[4]}")
         else:
             print(f"No customer found with Customer ID {customer_id}")
-
+    
+    #handling error with exception
     except mysql.connector.Error as e:
         print(f"Error: {e}")
 
     finally:
-        
+        #closing the cursor
         cursor.close()
 
 
@@ -37,19 +34,22 @@ def fetch_finance_details(connection, customer_id):
 #Below function would check Due dates of policies within 7 days of the current date and show the details of those customers
 def check_due_dates(connection):
     try:
+        #establishing cursor object for connection 
         cursor = connection.cursor()
+        #setting up variables
         seven_days_from_now = datetime.now().date() + timedelta(days=7)
         seven_days_from_now_str = seven_days_from_now.strftime("%m-%d-%Y")
-
+        #SQL statemnt to execute
         query = f"""SELECT C.NAME, C.EMAIL, HOME_POLICY_ID, Auto_Policy_id FROM INSURIT.Policy_Holder PH
 LEFT JOIN INSURIT.CUSTOMER C ON PH.CUSTOMER_ID = C.CUSTOMER_ID 
 WHERE (HOME_POLICY_ID is not Null OR AUTO_POLICY_ID is not null)
 AND PH.RENEWDATE BETWEEN CURDATE() AND STR_TO_DATE('{seven_days_from_now_str}','%m-%d-%Y');"""
-
+        #Executing Query
         cursor.execute(query)
-
+        #fetching data from DB
         due_policies = cursor.fetchall()
 
+        #Condition for Due_dates
         if due_policies:
             print("Below customers have Due Dates within the Next 7 Days:")
             for policy in due_policies:
@@ -60,7 +60,7 @@ AND PH.RENEWDATE BETWEEN CURDATE() AND STR_TO_DATE('{seven_days_from_now_str}','
             print()
         else:
             print("No policies with due dates within the next 7 days.")
-
+    #handling errors with exception
     except mysql.connector.Error as e:
         print(f"Error: {e}")
         
@@ -73,6 +73,7 @@ AND PH.RENEWDATE BETWEEN CURDATE() AND STR_TO_DATE('{seven_days_from_now_str}','
 #For the make_payment method, another method has to be defined which will extractd details needed in make_payment method
 def get_policy_holder_id(connection, customer_id, policy_type, policy_id):
     try:
+        #establishing connection
         cursor = connection.cursor()
 
         # Determine whether it's an Auto Policy or Home Policy
@@ -80,20 +81,23 @@ def get_policy_holder_id(connection, customer_id, policy_type, policy_id):
 
         # Query to get Holder_id based on Customer_id and Policy_Type
         query = f"SELECT Holder_id FROM Policy_Holder WHERE Customer_id = {customer_id} AND {policy_column} = {policy_id}"
-
+        #executing query
         cursor.execute(query)
         holder_id = cursor.fetchone()
-
+        
         return holder_id[0] if holder_id else None
-
+    #handling error with exception
     except mysql.connector.Error as e:
         print(f"Error: {e}")
 
     finally:
+        #closing the cursor
         cursor.close()
 
+#defining a function to make payments for user
 def make_payment(connection, policy_id, customer_id, policy_type):
     try:
+        #establishing connection
         cursor = connection.cursor()
         amount = int(input("Enter the amount: "))
 
@@ -120,8 +124,10 @@ def make_payment(connection, policy_id, customer_id, policy_type):
         else:
             print(f"No matching policy found for Customer ID: {customer_id}, Policy ID: {policy_id}, and Policy Type: {policy_type}")
 
+    #handling error with exception
     except mysql.connector.Error as e:
         print(f"Error: {e}")
 
     finally:
+        #closing cursor
         cursor.close()

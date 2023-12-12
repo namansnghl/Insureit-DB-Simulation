@@ -1,11 +1,15 @@
+#importing libraries and other file as packages
 import mysql.connector
 from datetime import datetime, timedelta
 from .views import view_policy
 
+#Function to add Policy by calling a SP
 def add_new_policy(connection):
     try:
+        #defining a cursor object to establish a connection
         cursor = connection.cursor()
 
+        #defining variables and asking them from user for input
         print("Please fill out below details to Add a new Policy to the Insurit System.\n")
         policy_name = input("Enter the name of the Policy: ")
         policy_type = input("Enter Policy Name: HomePolicy or AutoPolicy: ")
@@ -13,7 +17,7 @@ def add_new_policy(connection):
         policy_active_flag = "Y"
         sum_assured = int(input("Enter the sum assured for this policy: "))
         tenure = int(input("What's the Tenure: "))
-
+        #condition to identify table
         if policy_name == "HomePolicy": policy_table = "HomePolicy_detail"
         else:  policy_table = "AutoPolicy_detail" 
 
@@ -41,23 +45,24 @@ def add_new_policy(connection):
 
 
 
-
+#function to create new claims for users
 def create_new_claim(connection, customer_id):
     try:
         # Get input from the user
         claim_amount = int(input("Enter claim amount: "))
         listt = view_policy(connection, customer_id)
-        
+        #storing in the list
         if listt:
             holder_idx = int(input("Choose your policy (Enter index) - "))
             auto_present = any('Auto' in value for value in listt.values())
             home_present = any('Home' in value for value in listt.values())
-
+            #condition to check for which table to enter into
             if auto_present:
                 holder_id_query = f"SELECT Holder_id FROM Policy_Holder WHERE Auto_Policy_id = {listt[holder_idx][0]}"
             elif home_present:
                 holder_id_query = f"SELECT Holder_id FROM Policy_Holder WHERE Home_Policy_id = {listt[holder_idx][0]}"
 
+            #establishing connection 
             with connection.cursor() as cursor:
                 cursor.execute(holder_id_query)
                 holder_id = cursor.fetchone()[0]
@@ -70,7 +75,7 @@ def create_new_claim(connection, customer_id):
             connection.commit()
 
             print("New claim created successfully!")
-
+    #handling the error with throwing an exception
     except (mysql.connector.Error, ValueError) as err:
         print(f"Error: {err}")
 
