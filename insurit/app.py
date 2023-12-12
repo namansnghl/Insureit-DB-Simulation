@@ -34,6 +34,7 @@ def run(app: str, conn):
     login_parser.add_argument("-p", "--password", help="Insureit login password", required=True)
 
     while True:
+        # start the application until exit
         user_input = input(f"\n{app}> ")
         if not user_input:
             continue
@@ -55,6 +56,7 @@ def run(app: str, conn):
         except:
             unknown_command(loginparser)
         else:
+            # check authentication
             if auth.login(conn.cursor(), args.username, args.password, levels[args.command]):
                 print("Authentication successful.\nWelcome ", args.username)
                 if loggedin(app, args.username, levels[args.command]):
@@ -70,11 +72,14 @@ def run(app: str, conn):
 
 def loggedin(app: str, username: str, access: int) -> int:
     global connection
+    # Creating a parser for all user types
     access_levels = [RootParser, AgentParser, CustomerParser]
     parser = access_levels[access]()
+    # Fetching ID for the User from DB
     id = auth.id_from_username(connection, access, username)
 
     while True:
+        # Starting application as the user logged in
         user_input = input(f"{app} {username}> ")
         if not user_input:
             continue
@@ -86,9 +91,11 @@ def loggedin(app: str, username: str, access: int) -> int:
         if user_input.lower().strip() == 'logout':
             print("Logging you out...\n")
             return 0
+        # Parse the command entered by the user
         arg = parser.parse(user_input)
         if arg:
             try:
+                # If the command is good then execute it
                 run_command(arg, access_lvl=access, id=id, username=username, conn=connection)
             except Exception as msg:
                 print("ERROR: ", str(msg))

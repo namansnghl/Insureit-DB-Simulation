@@ -1,17 +1,21 @@
 import pandas as pd
 
-# View 1. view_policy() for customers
+# View 1) view_policy() for customers
 def view_policy(connection, customer_id):
     cursor = connection.cursor()
+    # SQL query to retrieve policies for a specific customer
     view = f"SELECT * FROM view_my_policy WHERE Customer_id = {customer_id}"
     cursor.execute(view)
     policies = cursor.fetchall()
     list_pol = {}
+    
+    # Check if any policies are found for the customer
     if not policies:
         print('Oops! No policies found for this user.')
     else:
         i = 0
         print(f"These are the policies you own. id {customer_id}")
+        # Iterate through policies and display information
         for policy in policies:
             i += 1
             if policy[2]:
@@ -24,12 +28,14 @@ def view_policy(connection, customer_id):
     return list_pol
 
 
-# view_claims()
+# View 2) viewClaims() to view claims for a customer
 def viewClaims(connection, customer_id):
     cursor = connection.cursor()
+    # SQL query to retrieve claims for a specific customer
     query = f"SELECT c.customer_id, c.name AS Customer_Name, cl.Claim_id, cl.Claim_amount, cl.Date, cl.claim_status, cl.Holder_id from claim cl join policy_holder ph on ph.Holder_id = cl.Holder_id join customer c on c.Customer_id = ph.Customer_id WHERE c.Customer_id = {customer_id};"
     cursor.execute(query)
     claims = cursor.fetchall()
+    # Display customer information and claims
     print("Customer ID:", claims[0][0])
     print("Customer Name:", claims[0][1])
     print("\n")
@@ -45,12 +51,13 @@ def viewClaims(connection, customer_id):
         print("\n")
 
 
-# show_dues() #SP NAMAN
+# View 3) pendingClaims() to show pending claims
 def pendingClaims(connection):
     cursor = connection.cursor()
     sql = f"SELECT CLAIM_ID, CLAIM_AMOUNT, POLICY_STATUS, PAST_REJECTS FROM INSURIT.PENDING_CLAIMS ORDER BY CLAIM_DT ASC;"
     cursor.execute(sql)
     result = cursor.fetchall()
+    # Display pending claims in tabular format
     print()
     print("{: <15} | {: <15} | {: <15} | {: <15}".format("CLAIM ID", "AMOUNT", "POLICY STATUS", "PAST REJECTS"))
     print("{:-<15}-|-{:-<15}-|-{:-<15}-|-{:-<15}".format("", "", "", ""))
@@ -63,9 +70,11 @@ def pendingClaims(connection):
 # show_customers() -- This is for agents and admin to show the customers.
 def showCustomers(connection, agent_id):
     cursor = connection.cursor()
+    # SQL query to retrieve customers for a specific agent
     view = f"SELECT GetCustomersForAgent({agent_id})"
     cursor.execute(view)
     result = cursor.fetchone()[0]
+    # Parse the result and create a DataFrame
     rows = [row.split(',') for row in result.split(';') if row]
     columns = ['Customer_ID', 'Name','Home_Policy_ID', 'Auto_Policy_ID']
 
