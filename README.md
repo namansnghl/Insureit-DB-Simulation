@@ -1,7 +1,7 @@
 # Insureit - Insurance Provider Simulation
 A CLI-based system developed to facilitate the sale of automobiles and homeowners' insurance to clients, all while effectively overseeing the interactions with agents and admin. It goes beyond basic transactions, introducing features like dynamic premium computation, private agent portals, and an analytical dashboard. The user-friendly CLI, backed by advanced database techniques, ensures intuitive interactions for diverse user types.
 
-[Gif]()
+![Gif](media/intro_demo.gif)
 
 ## Jump to
 + [Setting up the Application](#setup)
