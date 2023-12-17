@@ -55,9 +55,9 @@ We will execute the following scripts before we start inserting data. All the be
    2. `/SP/addNewPolicy_SP.sql`
    3. `/SP/insertdata_sp.sql`
 5. **Creating all Views**
-   - a. `/Views/agentPerformance.sql`
-   - b. `/Views/pending_claims.sql`
-   - c. `/Views/view_my_policy.sql`
+   1. `/Views/agentPerformance.sql`
+   2. `/Views/pending_claims.sql`
+   3. `/Views/view_my_policy.sql`
 
 Once we have the basic setup we can insert all the data into our tables. To do so we can either login to insurit application as root user and execute the command `database --reset RESET` which inserts all the data using the stored-procedure or we can execute .sql files in the following order.
 1. *customers.sql*
