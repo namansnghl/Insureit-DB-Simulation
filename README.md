@@ -1,19 +1,29 @@
 # Insureit - Insurance Provider Simulation
+A CLI-based system developed to facilitate the sale of automobiles and homeowners' insurance to clients, all while effectively overseeing the interactions with agents and admin. It goes beyond basic transactions, introducing features like dynamic premium computation, private agent portals, and an analytical dashboard. The user-friendly CLI, backed by advanced database techniques, ensures intuitive interactions for diverse user types.
+
+[Gif]()
 
 ## Jump to
++ [Setting up the Application](#setup)
+   + Prerequisites
+   + Database Setup
+   + Virtual Environment Setup
+   + Installing Insurit
++ [Starting Application](#start)
++ [Features and Commands](#cmd)
+   + Root Commands
+   + Agent Commands
+   + Customer Commands
++ [Backend](#backend)
+   + Schema Diagram
+   + Entity/Table Description
+   + Database Triggers
+   + Database Functions
+   + Stored Procedures
+   + Views
 
-
-## System Description
-InsureIt is a system developed to facilitate the sale of automobiles and homeowners' insurance to clients, 
-all while effectively overseeing the interactions with agents and policyholders. It has the following features:
-1. The system is a CLI-based application where clients can create accounts and browse through a list of insurances they qualify for and later purchase insurance through an agent.
-2. The insurance premium is a dynamically computed value for clients, considering specific parameters related to the insured asset.
-3. Agents have access to a private portal to view and manage their clients.
-4. The internal leadership has access to an analytical dashboard view that shows the policy and agent performances. This view refreshes as we update the data in the tables.
-5. The project places a greater emphasis on the efficiency of creating the system concerning data storage, loading, and access.
-6. In addition, we also prioritize the development of helper scripts designed to facilitate the loading of data feeds and the updating of analytical views.
-
-## Setting Up the Application
+## Setting Up the Application <a name="setup"></a>
+### Prerequisites
 Before we can begin setting up the application, ensure that the following requirements are met:
 1. **Download the application** from here to your local machine.
 2. **MySQL Database and Client:**
@@ -75,7 +85,7 @@ This command uses the environments.yml file to create a new virtual environment 
 The main folder of the project contains two setup files - `install.bat` and `install.sh`. For windows PC we will run the `install.bat` file in command prompt and for linux based system and Macs we run the command bash `install.sh` in terminal. Make sure these files are run inside the virtual environment.
 
 
-## Starting the application
+## Starting the application <a name="start"></a>
 Once the application and all the setup steps are completed we can check the application installation by executing the following commands on terminal/command prompt
 - `conda activate insurit_env`
 - `insurit --help`
@@ -83,7 +93,7 @@ The `--help` is expected to list a help page to start the application. In case t
 To start the application we can run `insurit connect` command and provide it with username and password to the database.
 The `logout` and `exit` commands can be used to logout of a user and exit the application respectively.
 
-## Features and Commands
+## Features and Commands <a name="cmd"></a>
 There are 3 main types of end users for the application - customer, agent, and administrator. Each of these users have access to features according to their permission levels with Admin being the highest, then agent, and customer. The admin user role is the only one who can manipulate the database from the application to reset data. Below are a list of features for each user role along with their commands.
 
 ### Root/Administrator:
@@ -133,11 +143,11 @@ As a client user the following operations can be performed.
    Or use one of its options to skip menu
   `account-settings [--email ||--phone ||--address]` - Edit account details
 
-## Database Backend
+## Backend <a name="backend"></a>
 
 ### Schema Diagram
 
-![Schema Diagram]()
+![Schema Diagram](media/Insurit_db_schema_diagram.jpeg)
 
 ### Entity/Table Description:
 * _Customers_ - It stores all the PII and general information about customers.
@@ -155,3 +165,22 @@ Each policy has its unique number which maps it to a customer and agent. This is
 * _Transactions_ - All premiums paid to Insurit against some policy is stored in this table.
 * _Loan_ - This table saves all the mortgage and loan related information for the assets.
 * _Finance_Details_ - When a customer makes payment against some policy then we store all their payment methods in this table for quicker transactions.
+
+### Database Triggers
+* _generate\_credentials_ - This trigger is to automate the process of generating secure credentials for new customers within the insurance application. This trigger operates on the principle of enhancing data security by hashing the customer's name using the SHA2 hashing function. Upon the insertion of a new customer record, the trigger dynamically generates a hashed password and subsequently inserts a new record into the SECRETS table. This record includes a unique username and the hashed password, ensuring a robust and secure authentication mechanism for customer access to the system.
+* _generate\_agent\_credentials_ - This trigger serves a parallel purpose, specifically tailored for the generation of credentials for new agents joining the insurance system. Like its counterpart for customers, this trigger employs a secure approach to credential creation.
+
+### Database Functions
+* _CalculatePremium()_ - The function serves to compute insurance premiums by considering policy type, sum assured, tenure, and the age of the policyholder. Its parameters include policy_id, age, sum_assured, tenure, and policy_type. This function applies a predefined logic to determine a base premium, subsequently adjusting it based on age categories.
+* _Auth()_ - The "auth" function operates as an authentication mechanism for user credentials and permissions. It takes parameters such as USR (Username), PSWD (Password), and PERMISSION (Permission level). The function generates a hashed password and validates the provided credentials and permissions against the database, returning a binary result.
+* _GetCustomersForAgent()_- The "GetCustomersForAgent" function retrieves customer details associated with a specific agent, taking agentID as its parameter. Utilizing a JOIN operation on relevant tables, this function compiles customer information into a formatted result.
+
+### Stored Procedures
+* _insertdata_ - This stored procedure is used to perform the basic INSERT operation into various tables of our database. It is used to set up the initial database for performing operations on our application. The administrator can also use this stored procedure to reset the data after changes have been made to the database.
+* _AddNewPolicy_ - The "AddNewPolicy" procedure adds a new insurance policy dynamically to a specified policy table. With parameters like policy_name, policy_type, description, policy_active_flag, sum_assured, tenure, and policy_table, this procedure constructs and executes a SQL query to facilitate policy addition.
+* _CreateNewClaim_ - The "CreateNewClaim" procedure facilitates the creation of new insurance claims with parameters including p_Claim_amount, p_Date, and p_Holder_id. This straightforward procedure directly inserts a new claim record with the provided claim amount, date, and policy holder ID.
+
+### Views
+* _AgentPerformance_ - "AgentPerformance" provides an overview of agent performance, displaying Agent_id, Agent_Name, Num_Customers, Num_Policies, and Total_Sales. This view employs JOIN operations on various tables to calculate and aggregate performance metrics for each agent.
+* _Pending_Claims_ - The "Pending_Claims" view presents pending insurance claims, showing fields like customer_id, past_rejects, claim_id, claim_date, amount claimed, policy status and policy_at_risk. By retrieving relevant information and utilizing conditional logic, this view identifies and displays pending claims.
+* _view_my_policy_: The "view_my_policy" view offers a comprehensive perspective on a customer's insurance policies. It amalgamates information from different tables to present details such as Holder_id, Customer_id, Home_Policy_id, Auto_Policy_id, homePolicyName, autoPolicyName, status_of_policy, StartDate, ExpiryDate, RenewDate, at_risk_flag, and Agent_id.
